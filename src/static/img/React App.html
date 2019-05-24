@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://localhost:3000/shop/LipLiner/all -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <link rel="stylesheet" href="./React App_files/semantic.min.css">
+
+    <link href="./React App_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./React App_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./React App_files/normalize.css">
+
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">.banner {
+  position: relative;
+  font-size: 1.2rem;
+  height: 3rem;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center; }
+  .banner__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: banner-fade;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards; }
+    .banner__slide:nth-child(1) {
+      animation-delay: -25s; }
+    .banner__slide:nth-child(2) {
+      animation-delay: -20s; }
+    .banner__slide:nth-child(3) {
+      animation-delay: -15s; }
+    .banner__slide:nth-child(4) {
+      animation-delay: -10s; }
+  .banner__text {
+    color: #181818; }
+    .banner__text strong {
+      letter-spacing: 0.5px; }
+
+@keyframes banner-fade {
+  0% {
+    opacity: 0;
+    z-index: 0; }
+  1% {
+    opacity: 1;
+    z-index: 1; }
+  24% {
+    opacity: 1;
+    z-index: 1; }
+  25% {
+    opacity: 0;
+    z-index: 0; }
+  100% {
+    opacity: 0;
+    z-index: 0; } }
+</style><style type="text/css">.skynav {
+  width: 100%;
+  padding: 2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: relative; }
+  .skynav__middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-size: 3rem; }
+  .skynav__left, .skynav__right {
+    display: flex;
+    font-size: 1.3rem; }
+    .skynav__left:not(:last-child), .skynav__right:not(:last-child) {
+      margin-right: 4rem; }
+    .skynav__left > *:hover, .skynav__right > *:hover {
+      color: #f58e88;
+      cursor: pointer; }
+</style><style type="text/css">.global-navbar__main-nav {
+  width: 100%;
+  line-height: 3;
+  margin: 0 auto;
+  display: flex;
+  text-align: center; }
+
+.global-navbar__list {
+  margin: 0 auto;
+  padding: 10px 15px; }
+
+.global-navbar__link {
+  text-decoration: none;
+  color: #181818; }
+
+.global-navbar__item {
+  display: inline-block;
+  float: left;
+  padding-right: 50px;
+  font-size: 1.15em;
+  max-width: 100%;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  list-style: none; }
+  .global-navbar__item:hover .global-navbar__hidden {
+    display: block; }
+  .global-navbar__item:hover {
+    text-decoration: underline; }
+  .global-navbar__item ul,
+  .global-navbar__item li {
+    list-style: none;
+    padding: 0; }
+
+.global-navbar__hidden {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  z-index: 1;
+  text-align: center; }
+  .global-navbar__hidden .navbar-headers {
+    text-decoration: none;
+    color: #181818; }
+</style><style type="text/css"></style><style type="text/css">.global-footer {
+  background-color: #181818;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 6em 4em; }
+  .global-footer .footer-brand {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6em;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5px; }
+    .global-footer .footer-brand__name {
+      font-size: 2.5em;
+      font-weight: 100; }
+    .global-footer .footer-brand__contact {
+      font-family: "Courgette", cursive;
+      font-size: 1.2em;
+      display: flex; }
+      .global-footer .footer-brand__contact i {
+        margin-left: 1em; }
+        .global-footer .footer-brand__contact i:hover {
+          cursor: pointer;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+          transform: scale(1.1) translateY(-1px); }
+  .global-footer .footer-nav {
+    width: 100%;
+    padding: 2em auto;
+    display: flex;
+    justify-content: space-evenly; }
+    .global-footer .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 3em; }
+      .global-footer .footer-nav ul li {
+        padding: 5px 0; }
+        .global-footer .footer-nav ul li:hover {
+          text-decoration: underline;
+          cursor: pointer;
+          color: #f58e88;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+          transform: scale(1.1) translateY(-1px); }
+  .global-footer .footer-copyright {
+    color: darkgrey;
+    border-top: 1px solid darkgrey;
+    margin-top: 2em;
+    padding: 1em 0;
+    text-align: right; }
+</style><style type="text/css">.homepage-container .cosmetic-pic {
+  width: 100%;
+  height: 80vh;
+  background-image: url(/static/media/cosmetics-3.8be0704b.jpg);
+  background-size: cover; }
+
+.homepage-container .cosmetic-story {
+  display: inline-block;
+  padding: 80px 0 40px; }
+  .homepage-container .cosmetic-story img {
+    margin-bottom: 1em; }
+  .homepage-container .cosmetic-story h2 {
+    font-size: 2em;
+    letter-spacing: 2px;
+    font-family: "Raleway", sans-serif; }
+    .homepage-container .cosmetic-story h2::after {
+      margin-top: 30px;
+      display: block;
+      width: 30px;
+      border-bottom: 1px solid;
+      content: ""; }
+  .homepage-container .cosmetic-story .cosmetic-text {
+    position: relative; }
+    .homepage-container .cosmetic-story .cosmetic-text .description {
+      font-size: 1.2em;
+      color: #797472;
+      letter-spacing: 0.5px;
+      font-family: "Montserrat", sans-serif;
+      width: 55%;
+      float: left; }
+  .homepage-container .cosmetic-story .link__shop {
+    color: #f58e88;
+    text-transform: uppercase;
+    text-align: right;
+    margin: 0 auto;
+    position: absolute;
+    right: 20px;
+    top: 200px;
+    width: 45%;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: margin-left 0.2s; }
+    .homepage-container .cosmetic-story .link__shop span {
+      margin-left: 3px; }
+    .homepage-container .cosmetic-story .link__shop:hover {
+      color: #f1b9a9; }
+      .homepage-container .cosmetic-story .link__shop:hover span {
+        margin-left: 8px;
+        transition: margin-left 0.2s; }
+    .homepage-container .cosmetic-story .link__shop:focus {
+      outline: none; }
+  .homepage-container .cosmetic-story__double {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 3em;
+    padding: 0 2em; }
+    .homepage-container .cosmetic-story__double-1 {
+      width: 50%;
+      margin-right: 8%; }
+      .homepage-container .cosmetic-story__double-1 img {
+        width: 40em; }
+    .homepage-container .cosmetic-story__double-2 {
+      padding: 0 0 0 90px; }
+      .homepage-container .cosmetic-story__double-2 img {
+        width: 35em;
+        transform: scale(0.9); }
+      .homepage-container .cosmetic-story__double-2 #description-2 {
+        width: 100%; }
+      .homepage-container .cosmetic-story__double-2 #story2-h2 {
+        width: 30%;
+        float: left; }
+      .homepage-container .cosmetic-story__double-2 #story2-link {
+        position: absolute;
+        top: 20px;
+        right: 20px; }
+      .homepage-container .cosmetic-story__double-2 #story2-linkbox {
+        position: relative; }
+  .homepage-container .cosmetic-story__single {
+    margin: 0 3em;
+    padding: 0 160px; }
+    .homepage-container .cosmetic-story__single-1 {
+      display: flex; }
+      .homepage-container .cosmetic-story__single-1 img {
+        width: 30em;
+        margin-right: 4em; }
+      .homepage-container .cosmetic-story__single-1 #description-3 {
+        width: 100%;
+        margin-top: 1em; }
+      .homepage-container .cosmetic-story__single-1 #story3-link {
+        position: absolute;
+        right: 0;
+        top: 25em; }
+</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div><div><div class="global-top-header"><div class="banner"><div class="banner__slide"><div class="banner__text"><strong>Free Shipping  </strong>over $35*</div></div><div class="banner__slide"><div class="banner__text"><strong>Same Day Dispatch  </strong>order by 2pm via express*</div></div><div class="banner__slide"><div class="banner__text"><strong>Free Returns  </strong>within 30 days*</div></div><div class="banner__slide"><div class="banner__text"><strong>Complimentary Samples  </strong>with every order</div></div></div><div class="skynav"><div class="skynav__left"><div class="skynav__left map-marker"><i class="map marker alternate icon"></i></div><div class="skynav__left magnifying-glass "><i class="search icon"></i></div></div><div class="skynav__middle"><div class="skynav__middle brand-name">COS BAG</div></div><div class="skynav__right"><div class="skynav__right account"><i class="user outline icon"></i><div>My Account</div></div><div class="skynav__right wish-list "><i class="heart outline icon"></i></div><div class="skynav__right shopping-bag "><i class="shopping bag icon"></i></div></div></div><div class="global-navbar__main-nav"><ul class="global-navbar__list"><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/Blush/all">Blush</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Blush/Powder">Powder</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Blush/Cream">Cream</a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/Bronzer/all">Bronzer</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Bronzer/Powder">Powder</a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/Eyebrow/all">Eyebrow</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Eyebrow/Pencil">Pencil</a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/Eyeliner/all">Eyeliner</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Eyeliner/Liquid">Liquid</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Eyeliner/Pencil">Pencil</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Eyeliner/Gel">Gel</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Eyeliner/Cream">Cream</a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/Eyeshadow/all">Eyeshadow</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Eyeshadow/Palette">Palette</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Eyeshadow/Pencil">Pencil</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Eyeshadow/Cream">Cream</a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/Foundation/all">Foundation</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Foundation/Liquid">Liquid</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Foundation/Contour">Contour</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Foundation/Bb%20cc">Bb cc</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Foundation/Concealer">Concealer</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Foundation/Cream">Cream</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Foundation/Mineral">Mineral</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Foundation/Powder">Powder</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Foundation/Highlighter">Highlighter</a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/LipLiner/all">LipLiner</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/LipLiner/Pencil">Pencil</a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/Lipstick/all">Lipstick</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Lipstick/Lipstick">Lipstick</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Lipstick/Lip%20Gloss">Lip Gloss</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Lipstick/Liquid">Liquid</a></li><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Lipstick/Lip%20Stain">Lip Stain</a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/Mascara/all">Mascara</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/Mascara/"></a></li></ul></div></li><li class="global-navbar__item"><a class="global-navbar__link" href="http://localhost:3000/shop/NailPolish/all">NailPolish</a><div class="global-navbar__hidden"><ul class="global-navbar__hidden-list"><li class="global-navbar__hidden-item"><a class="navbar-headers" href="http://localhost:3000/shop/NailPolish/"></a></li></ul></div></li></ul></div></div><div>LipLiner</div><div class="global-footer"><div class="footer-brand"><div class="footer-brand__name">COS BAG</div><div class="footer-brand__contact">Get social with us<i class="facebook square icon"></i><i class="instagram icon"></i><i class="twitter icon"></i><i class="wechat icon"></i></div></div><div class="footer-nav"><div class="footer-nav__about"><h3>About CosBag</h3><ul><li>About CosBag</li><li>Careers</li><li>CosBag stands social impact</li><li>Affiliates</li><li>Supply Chain Transparency</li><li>Sitemap</li><li>CosBag Global Sites</li></ul></div><div class="footer-nav__mine"><h3>My CosBag</h3><ul><li>My Account</li><li>Order Status</li><li>Beauty Insider</li><li>Rewards Bazaar</li><li>Loves</li><li>Flash Unlimited Shipping</li></ul></div><div class="footer-nav__help"><h3>Help &amp; FAQs</h3><ul><li>Online Ordering</li><li>Shipping</li><li>Billing</li><li>Returns &amp; Exchanges</li><li>International Shipments</li><li>Custoemr Service</li><li>Accessibility</li></ul></div></div><div class="footer-bottom"></div><div class="footer-copyright"><div>Copyright © 2019</div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/1.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.16913cbf20df5d675c37.hot-update.js"></script>
+
+</body></html>

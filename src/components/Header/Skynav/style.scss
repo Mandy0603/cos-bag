@@ -1,0 +1,30 @@
+.skynav {
+  width: 100%;
+  padding: 2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  &__middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    font-size: 3rem;
+  }
+  &__left,
+  &__right {
+    display: flex;
+    font-size: 1.3rem;
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+    & > *:hover {
+      color: #f58e88;
+      cursor: pointer;
+    }
+  }
+}

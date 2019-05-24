@@ -74,7 +74,6 @@
       justify-content: space-between;
       margin: 0 3em;
       padding: 0 2em;
-      height: 150vh;
 
       &-1 {
         width: 50%;
@@ -108,9 +107,25 @@
       }
     }
     &__single {
+      margin: 0 3em;
+      padding: 0 160px;
+
       &-1 {
+        display: flex;
+
         img {
           width: 30em;
+          margin-right: 4em;
+        }
+
+        #description-3 {
+          width: 100%;
+          margin-top: 1em;
+        }
+        #story3-link {
+          position: absolute;
+          right: 0;
+          top: 25em;
         }
       }
     }

@@ -3,6 +3,7 @@ import { Router, Route, Switch } from "react-router-dom";
 
 import history from "../../services/history";
 import Header from "../Header";
+import Footer from "../Footer";
 import Home from "../Home";
 import Blush from "../productTypes/Blush";
 import Bronzer from "../productTypes/Bronzer";
@@ -70,6 +71,7 @@ const App = () => {
               component={NailPolish}
             />
           </Switch>
+          <Footer />
         </div>
       </Router>
     </div>
