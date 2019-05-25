@@ -1,11 +1,12 @@
 .skynav {
   width: 100%;
-  padding: 2rem 2.5rem;
+  padding: 3rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   position: relative;
+  border-bottom: 1px solid rgba(121, 117, 117, 0.2);
 
   &__middle {
     position: absolute;
@@ -13,7 +14,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
-    font-size: 3rem;
+    font-size: 5rem;
+    font-family: "Cookie", cursive;
   }
   &__left,
   &__right {

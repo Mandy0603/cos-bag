@@ -1,0 +1,20 @@
+.filterbar {
+  padding: 0rem 2rem;
+  font-size: 1.5rem;
+  color: rgb(75, 75, 75);
+  display: flex;
+  justify-content: space-between;
+  &__filters {
+    display: flex;
+
+    & > * {
+      margin-right: 2rem;
+    }
+  }
+  &__sortby {
+    display: flex;
+    & > * {
+      margin-right: 2rem;
+    }
+  }
+}

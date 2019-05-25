@@ -1,0 +1,15 @@
+.btn-dropdown {
+  width: 8rem;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+
+    &:hover {
+    }
+  }
+}

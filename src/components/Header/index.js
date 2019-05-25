@@ -2,7 +2,6 @@ import React from "react";
 import Banner from "./Banner";
 import Skynav from "./Skynav";
 import Navbar from "./Navbar";
-import "./style.scss";
 
 const Header = () => {
   return (

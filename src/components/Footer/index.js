@@ -54,9 +54,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer-bottom" />
-      <div className="footer-copyright">
-        <div>Copyright &copy; 2019</div>
+      <div className="footer-bottom">
+        <div className="footer-copyright">
+          <div>Copyright &copy; 2019</div>
+        </div>
       </div>
     </div>
   );

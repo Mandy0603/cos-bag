@@ -4,8 +4,8 @@ import Products from "./Products";
 
 const Navbar = () => {
   return (
-    <div className="global-navbar__main-nav">
-      <ul className="global-navbar__list">
+    <div className="navbar__main">
+      <ul className="navbar__list">
         <Products product={"Blush"} subcategory={["Powder", "Cream"]} />
         <Products product={"Bronzer"} subcategory={["Powder"]} />
         <Products product={"Eyebrow"} subcategory={["Pencil"]} />
@@ -30,13 +30,13 @@ const Navbar = () => {
             "Highlighter"
           ]}
         />
-        <Products product={"LipLiner"} subcategory={["Pencil"]} />
+        <Products product={"Lip Liner"} subcategory={["Pencil"]} />
         <Products
           product={"Lipstick"}
           subcategory={["Lipstick", "Lip Gloss", "Liquid", "Lip Stain"]}
         />
         <Products product={"Mascara"} subcategory={[""]} />
-        <Products product={"NailPolish"} subcategory={[""]} />
+        <Products product={"Nail Polish"} subcategory={[""]} />
       </ul>
     </div>
   );

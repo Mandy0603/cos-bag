@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Products extends React.Component {
-  renderSub = subcategory => {
+  renderSub = (subcategory, productWithoutSpace) => {
     return subcategory.map(sub => {
+      const subWithoutSpace = sub.replace(/\s+/g, "");
       return (
-        <li className="global-navbar__hidden-item" key={sub.toString()}>
+        <li className="navbar__hidden-item" key={sub.toString()}>
           <Link
-            to={`/shop/${this.props.product}/${sub}`}
+            to={`/shop/${productWithoutSpace}/${subWithoutSpace}`}
             className="navbar-headers"
           >
             {sub}
@@ -18,14 +19,15 @@ class Products extends React.Component {
   };
   render() {
     const { product, subcategory } = this.props;
+    const productWithoutSpace = product.replace(/\s+/g, "");
     return (
-      <li className="global-navbar__item">
-        <Link to={`/shop/${product}/all`} class="global-navbar__link">
+      <li className="navbar__item">
+        <Link to={`/shop/${productWithoutSpace}/all`} class="navbar__link">
           {product}
         </Link>
-        <div className="global-navbar__hidden">
-          <ul className="global-navbar__hidden-list">
-            {this.renderSub(subcategory)}
+        <div className="navbar__hidden">
+          <ul className="navbar__hidden-list">
+            {this.renderSub(subcategory, productWithoutSpace)}
           </ul>
         </div>
       </li>
