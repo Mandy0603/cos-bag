@@ -4,6 +4,7 @@
   color: rgb(75, 75, 75);
   display: flex;
   justify-content: space-between;
+  position: relative;
   &__filters {
     display: flex;
 
@@ -15,6 +16,91 @@
     display: flex;
     & > * {
       margin-right: 2rem;
+    }
+  }
+}
+
+.btn-dropdown {
+  width: 8rem;
+  border: none;
+
+  background-color: #fff;
+
+  position: relative;
+  &:focus {
+    outline: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #f58e88;
+    transition: all 0.5s;
+  }
+
+  &:hover::after {
+    width: 68px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.filters {
+  &__container {
+    height: 35rem;
+    background-color: #ffffffde;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    padding: 2rem 8rem;
+    margin: 0 2rem;
+    font-size: 1.3rem;
+  }
+  &__checkboxes {
+    label {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      width: 20rem;
+      height: 2rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.5px;
+
+      text-align: center;
+
+      &:hover input ~ .checkmark {
+        text-decoration: underline;
+      }
+      & input:checked ~ .checkmark {
+        color: #f58e88;
+      }
+      & input:checked ~ .checkmark:after {
+        display: block;
+      }
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+
+        line-height: 35px;
+        text-align: center;
+        color: #1b1a20;
+      }
     }
   }
 }

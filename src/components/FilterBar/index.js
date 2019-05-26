@@ -1,5 +1,8 @@
 import React from "react";
-import FilterDropdown from "./FilterDropdown";
+import BrandFilter from "./BrandFilter";
+import TagFilter from "./TagFilter";
+import PriceFilter from "./PriceFilter";
+
 import SortBy from "./SortBy";
 import "./style.scss";
 
@@ -8,12 +11,9 @@ const FilterBar = () => {
     <div className="filterbar">
       <div className="filterbar__filters">
         <p>Filter by:</p>
-        {/* subcategory */}
-        <FilterDropdown />
-        {/* brand */}
-        {/* <FilterDropdown /> */}
-        {/* tag */}
-        {/* <FilterDropdown /> */}
+        <BrandFilter />
+        <TagFilter />
+        <PriceFilter />
       </div>
       <div className="filterbar__sortby">
         <p>Sort by:</p>

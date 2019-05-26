@@ -4,8 +4,6 @@ import Story from "./Story";
 import CPics from "./CPics";
 import Bestseller from "./Bestseller";
 
-import "./style.scss";
-
 const Home = () => {
   return (
     <div className="homepage-container">

@@ -1,6 +1,7 @@
 import React from "react";
 import ProductBreadcrumb from "../../Breadcrumb";
 import FilterBar from "../../FilterBar";
+import FilterResult from "../../FilterResult";
 
 import "./style.scss";
 
@@ -18,6 +19,7 @@ const Blush = props => {
         subcategory={props.match.params.subcategory}
       />
       <FilterBar />
+      <FilterResult />
     </div>
   );
 };

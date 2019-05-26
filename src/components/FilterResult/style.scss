@@ -1,0 +1,30 @@
+.filter-result {
+  display: flex;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  &__number {
+    margin-right: 2rem;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__category {
+    // font-size: 1.5rem;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+    border-bottom: 1px solid #181818;
+    text-transform: capitalize;
+  }
+  &__close {
+    font-size: 1rem;
+    margin-left: 2rem;
+    background-color: #fff;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+}

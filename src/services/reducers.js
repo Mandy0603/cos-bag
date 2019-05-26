@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
+import filterReducer from "./filterReducer";
 
 export default combineReducers({
-  replaceMe: () => {
-    return 5;
-  }
+  filter: filterReducer
 });
