@@ -1,7 +1,7 @@
 import React from "react";
 import FilterCollapse from "../FilterCollapse";
 import { connect } from "react-redux";
-import { updateBrandFilters } from "../../../services/actions";
+import { updateBrandFilters } from "../../../services/Filters/actions";
 
 const brand = [
   "almay",

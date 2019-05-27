@@ -4,7 +4,7 @@ import {
   updateBrandFilters,
   updatePriceFilters,
   updateTagFilters
-} from "../../services/actions";
+} from "../../services/Filters/actions";
 class CloseButton extends React.Component {
   onButtonClick = () => {
     if (this.props.category === "brands") {

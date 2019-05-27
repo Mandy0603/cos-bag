@@ -1,7 +1,7 @@
 import React from "react";
 import FilterCollapse from "../FilterCollapse";
 import { connect } from "react-redux";
-import { updateTagFilters } from "../../../services/actions";
+import { updateTagFilters } from "../../../services/Filters/actions";
 
 const tag = [
   "Canadian",

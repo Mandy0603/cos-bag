@@ -1,3 +1,10 @@
+.filter__container {
+  display: flex;
+  &-title {
+    margin-right: 1.5rem;
+  }
+}
+
 .filterbar {
   padding: 0rem 2rem;
   font-size: 1.5rem;
@@ -101,6 +108,23 @@
         text-align: center;
         color: #1b1a20;
       }
+    }
+  }
+}
+
+.sort {
+  &__container {
+    font-size: 1.5rem;
+    color: #806d6d;
+  }
+  &__select {
+    border: none;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: #806d6d;
+    padding: 0 1.5rem;
+    &:focus {
+      outline: none;
     }
   }
 }

@@ -1,7 +1,34 @@
 import React from "react";
+import ProductBreadcrumb from "../../Breadcrumb";
+import FilterBar from "../../FilterBar";
+import FilterResult from "../../FilterResult";
+import ProductList from "../../ProductList";
 
-const Eyeliner = () => {
-  return <div>Eyeliner</div>;
-};
+import "../style.scss";
+
+class Eyeliner extends React.Component {
+  render() {
+    return (
+      <div className="blush">
+        <div className="blush__top">
+          <img
+            src={require("../../../static/img/carousel-1.jpg")}
+            alt="display"
+          />
+        </div>
+        <ProductBreadcrumb
+          category={"Eyeliner"}
+          subcategory={this.props.match.params.subcategory}
+        />
+        <FilterBar />
+        <FilterResult />
+        <ProductList
+          productType={"Eyeliner"}
+          category={this.props.match.params.subcategory}
+        />
+      </div>
+    );
+  }
+}
 
 export default Eyeliner;

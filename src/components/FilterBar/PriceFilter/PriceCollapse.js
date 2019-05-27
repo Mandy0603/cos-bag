@@ -1,7 +1,7 @@
 import React from "react";
 import FilterCollapse from "../FilterCollapse";
 import { connect } from "react-redux";
-import { updatePriceFilters } from "../../../services/actions";
+import { updatePriceFilters } from "../../../services/Filters/actions";
 
 const price = ["$0 - 49", "$50 - 99", "$100 - 199", "above $200"];
 

@@ -10,13 +10,12 @@ const FilterBar = () => {
   return (
     <div className="filterbar">
       <div className="filterbar__filters">
-        <p>Filter by:</p>
+        {/* <p>Filter by:</p> */}
         <BrandFilter />
         <TagFilter />
         <PriceFilter />
       </div>
       <div className="filterbar__sortby">
-        <p>Sort by:</p>
         <SortBy />
       </div>
     </div>

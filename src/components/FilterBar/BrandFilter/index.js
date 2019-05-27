@@ -5,7 +5,10 @@ import BrandCollapse from "./BrandCollapse";
 class BrandFilter extends React.Component {
   render() {
     return (
-      <FilterButton filter={"Brand"} collapseComponent={<BrandCollapse />} />
+      <div className="filter__container">
+        <p className="filter__container-title">Filter by:</p>
+        <FilterButton filter={"Brand"} collapseComponent={<BrandCollapse />} />
+      </div>
     );
   }
 }
