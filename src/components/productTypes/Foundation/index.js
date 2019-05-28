@@ -21,10 +21,14 @@ class Foundation extends React.Component {
           subcategory={this.props.match.params.subcategory}
         />
         <FilterBar />
-        <FilterResult />
+        <FilterResult
+          category={"foundation"}
+          pages={this.props.match.params.pages}
+        />
         <ProductList
           productType={"Foundation"}
           category={this.props.match.params.subcategory}
+          pages={this.props.match.params.pages}
         />
       </div>
     );

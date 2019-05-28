@@ -14,16 +14,12 @@ const compare = {
   }
 };
 
-// const price={
-
-// }
-
 export const fetchProducts = (
   productType,
   category,
   brandFilters,
   tagFilters,
-  priceFilters,
+  categoryFilters,
   sortBy,
   callback
 ) => dispatch => {
@@ -45,9 +41,11 @@ export const fetchProducts = (
           tagFilters.find(tf => p.tag_list.find(tag => tag === tf))
         );
       }
-      if (!!priceFilters && priceFilters.length > 0) {
+      if (!!categoryFilters && categoryFilters.length > 0) {
         products = products.filter(p =>
-          priceFilters.find(pf => p.price === pf)
+          categoryFilters.find(
+            cf => p.category === cf.replace(" ", "_").toLowerCase()
+          )
         );
       }
 

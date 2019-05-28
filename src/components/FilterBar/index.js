@@ -1,19 +1,18 @@
 import React from "react";
 import BrandFilter from "./BrandFilter";
 import TagFilter from "./TagFilter";
-import PriceFilter from "./PriceFilter";
-
+import CategoryFilter from "./CategoryFilter";
 import SortBy from "./SortBy";
 import "./style.scss";
 
-const FilterBar = () => {
+const FilterBar = ({ category }) => {
   return (
     <div className="filterbar">
       <div className="filterbar__filters">
-        {/* <p>Filter by:</p> */}
+        <p>Filter by:</p>
+        <CategoryFilter category={category} />
         <BrandFilter />
         <TagFilter />
-        <PriceFilter />
       </div>
       <div className="filterbar__sortby">
         <SortBy />

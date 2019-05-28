@@ -20,11 +20,12 @@ class Blush extends React.Component {
           category={"Blush"}
           subcategory={this.props.match.params.subcategory}
         />
-        <FilterBar />
-        <FilterResult />
+        <FilterBar category={"blush"} />
+        <FilterResult pages={this.props.match.params.pages} />
         <ProductList
           productType={"blush"}
           category={this.props.match.params.subcategory}
+          pages={this.props.match.params.pages}
         />
       </div>
     );

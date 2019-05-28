@@ -2,24 +2,25 @@ import React from "react";
 import { connect } from "react-redux";
 import {
   updateBrandFilters,
-  updatePriceFilters,
+  updateCategoryFilters,
   updateTagFilters
 } from "../../services/Filters/actions";
+
 class CloseButton extends React.Component {
   onButtonClick = () => {
-    if (this.props.category === "brands") {
+    if (this.props.type === "brands") {
       const brandsNew = this.props.brands.filter(
         brand => brand !== this.props.item
       );
       this.props.updateBrandFilters(brandsNew);
-    } else if (this.props.category === "tags") {
+    } else if (this.props.type === "tags") {
       const tagsNew = this.props.tags.filter(tag => tag !== this.props.item);
       this.props.updateTagFilters(tagsNew);
     } else {
-      const priceNew = this.props.price.filter(
-        price => price !== this.props.item
+      const categoryNew = this.props.category.filter(
+        category => category !== this.props.item
       );
-      this.props.updatePriceFilters(priceNew);
+      this.props.updateCategoryFilters(categoryNew);
     }
     this.props.clickButton();
   };
@@ -35,11 +36,11 @@ const mapStateToProps = state => {
   return {
     brands: state.filter.brands,
     tags: state.filter.tags,
-    price: state.filter.price
+    category: state.filter.category
   };
 };
 
 export default connect(
   mapStateToProps,
-  { updateBrandFilters, updatePriceFilters, updateTagFilters }
+  { updateBrandFilters, updateCategoryFilters, updateTagFilters }
 )(CloseButton);

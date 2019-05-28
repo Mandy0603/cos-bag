@@ -4,9 +4,11 @@ import "./style.scss";
 
 const ProductBreadcrumb = ({ category, subcategory }) => {
   return (
-    <Breadcrumb>
+    <Breadcrumb id="bread_crumb">
       <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="#">{category}</Breadcrumb.Item>
+      <Breadcrumb.Item href={`/shop/${category}/all`}>
+        {category}
+      </Breadcrumb.Item>
       <Breadcrumb.Item active>{subcategory}</Breadcrumb.Item>
     </Breadcrumb>
   );

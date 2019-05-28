@@ -9,8 +9,8 @@ import "../style.scss";
 class Bronzer extends React.Component {
   render() {
     return (
-      <div className="blush">
-        <div className="blush__top">
+      <div className="bronzer">
+        <div className="bronzer__top">
           <img
             src={require("../../../static/img/carousel-1.jpg")}
             alt="display"
@@ -20,11 +20,12 @@ class Bronzer extends React.Component {
           category={"Bronzer"}
           subcategory={this.props.match.params.subcategory}
         />
-        <FilterBar />
-        <FilterResult />
+        <FilterBar category={"bronzer"} />
+        <FilterResult pages={this.props.match.params.pages} />
         <ProductList
           productType={"bronzer"}
           category={this.props.match.params.subcategory}
+          pages={this.props.match.params.pages}
         />
       </div>
     );

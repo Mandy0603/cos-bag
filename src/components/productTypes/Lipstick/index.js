@@ -20,11 +20,12 @@ class Lipstick extends React.Component {
           category={"Lipstick"}
           subcategory={this.props.match.params.subcategory}
         />
-        <FilterBar />
-        <FilterResult />
+        <FilterBar category={"lipstick"} />
+        <FilterResult pages={this.props.match.params.pages} />
         <ProductList
           productType={"Lipstick"}
           category={this.props.match.params.subcategory}
+          pages={this.props.match.params.pages}
         />
       </div>
     );

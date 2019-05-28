@@ -12,9 +12,9 @@ export const updateTagFilters = filters => {
   };
 };
 
-export const updatePriceFilters = filters => {
+export const updateCategoryFilters = filters => {
   return {
-    type: "UPDATE_PRICE_FILTER",
+    type: "UPDATE_CATEGORY_FILTER",
     payload: filters
   };
 };

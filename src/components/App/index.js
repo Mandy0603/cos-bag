@@ -24,49 +24,53 @@ const App = () => {
           <Header />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/shop/blush/:subcategory" exact component={Blush} />
             <Route
-              path="/shop/bronzer/:subcategory"
+              path="/shop/blush/:subcategory?/:pages?"
+              exact
+              component={Blush}
+            />
+            <Route
+              path="/shop/bronzer/:subcategory?/:pages?"
               exact
               component={Bronzer}
             />
             <Route
-              path="/shop/eyebrow/:subcategory"
+              path="/shop/eyebrow/:subcategory?/:pages?"
               exact
               component={Eyebrow}
             />
             <Route
-              path="/shop/eyeliner/:subcategory"
+              path="/shop/eyeliner/:subcategory?/:pages?"
               exact
               component={Eyeliner}
             />
             <Route
-              path="/shop/eyeshadow/:subcategory"
+              path="/shop/eyeshadow/:subcategory?/:pages?"
               exact
               component={Eyeshadow}
             />
             <Route
-              path="/shop/foundation/:subcategory"
+              path="/shop/foundation/:subcategory?/:pages?"
               exact
               component={Foundation}
             />
             <Route
-              path="/shop/lipliner/:subcategory"
+              path="/shop/lipliner/:subcategory?/:pages?"
               exact
               component={LipLiner}
             />
             <Route
-              path="/shop/lipstick/:subcategory"
+              path="/shop/lipstick/:subcategory?/:pages?"
               exact
               component={Lipstick}
             />
             <Route
-              path="/shop/mascara/:subcategory"
+              path="/shop/mascara/:subcategory?/:pages?"
               exact
               component={Mascara}
             />
             <Route
-              path="/shop/nailpolish/:subcategory"
+              path="/shop/nailpolish/:subcategory?/:pages?"
               exact
               component={NailPolish}
             />

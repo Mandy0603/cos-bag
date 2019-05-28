@@ -20,11 +20,12 @@ class Eyeshadow extends React.Component {
           category={"Eyeshadow"}
           subcategory={this.props.match.params.subcategory}
         />
-        <FilterBar />
-        <FilterResult />
+        <FilterBar category={"eyeshadow"} />
+        <FilterResult pages={this.props.match.params.pages} />
         <ProductList
           productType={"Eyeshadow"}
           category={this.props.match.params.subcategory}
+          pages={this.props.match.params.pages}
         />
       </div>
     );

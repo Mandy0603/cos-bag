@@ -1,7 +1,7 @@
 const initialState = {
   brands: [],
   tags: [],
-  price: []
+  category: []
 };
 
 export default function(state = initialState, action) {
@@ -16,10 +16,10 @@ export default function(state = initialState, action) {
         ...state,
         tags: action.payload
       };
-    case "UPDATE_PRICE_FILTER":
+    case "UPDATE_CATEGORY_FILTER":
       return {
         ...state,
-        price: action.payload
+        category: action.payload
       };
 
     default:

@@ -20,11 +20,12 @@ class Eyebrow extends React.Component {
           category={"Eyebrow"}
           subcategory={this.props.match.params.subcategory}
         />
-        <FilterBar />
-        <FilterResult />
+        <FilterBar category={"eyebrow"} />
+        <FilterResult pages={this.props.match.params.pages} />
         <ProductList
           productType={"Eyebrow"}
           category={this.props.match.params.subcategory}
+          pages={this.props.match.params.pages}
         />
       </div>
     );

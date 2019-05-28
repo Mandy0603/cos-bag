@@ -20,11 +20,12 @@ class Eyeliner extends React.Component {
           category={"Eyeliner"}
           subcategory={this.props.match.params.subcategory}
         />
-        <FilterBar />
-        <FilterResult />
+        <FilterBar category={"eyeliner"} />
+        <FilterResult pages={this.props.match.params.pages} />
         <ProductList
           productType={"Eyeliner"}
           category={this.props.match.params.subcategory}
+          pages={this.props.match.params.pages}
         />
       </div>
     );

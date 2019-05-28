@@ -17,7 +17,12 @@ class FilterButton extends React.Component {
 
   render() {
     return (
-      <div className="brand-filter">
+      <div
+        onMouseLeave={() => {
+          this.setState({ collapseShow: false });
+        }}
+        className="filterBy"
+      >
         <button onClick={this.toggleCollapse} className="btn-dropdown">
           <div className="btn-dropdown__title">
             {this.props.filter}

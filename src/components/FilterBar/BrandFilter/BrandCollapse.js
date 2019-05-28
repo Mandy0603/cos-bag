@@ -67,6 +67,7 @@ class BrandCollapse extends React.Component {
     return (
       <FilterCollapse
         filterItems={brand}
+        filterStorage="brands"
         updateFilter={this.props.updateBrandFilters}
       />
     );

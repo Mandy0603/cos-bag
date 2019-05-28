@@ -20,11 +20,12 @@ class NailPolish extends React.Component {
           category={"Nail Polish"}
           subcategory={this.props.match.params.subcategory}
         />
-        <FilterBar />
-        <FilterResult />
+        <FilterBar category={"nailpolish"} />
+        <FilterResult pages={this.props.match.params.pages} />
         <ProductList
           productType={"Nail_Polish"}
           category={this.props.match.params.subcategory}
+          pages={this.props.match.params.pages}
         />
       </div>
     );

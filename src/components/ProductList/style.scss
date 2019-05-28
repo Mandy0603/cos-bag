@@ -1,5 +1,5 @@
-.shelf__container {
-  padding: 0rem 3rem;
+.shelf__list {
+  padding: 2rem 3rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -16,7 +16,7 @@
 
     &:hover {
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-      transform: scale(1.1) translateY(2px);
+      transform: scale(1.05) translateY(2px);
     }
   }
   &__image {
@@ -94,6 +94,42 @@
     }
     &-cart {
       background-color: yellow;
+    }
+  }
+}
+.btn__operation {
+  text-align: center;
+  padding: 0rem 2rem 3rem 2rem;
+  font-size: 1.7rem;
+
+  button {
+    background-color: transparent;
+    color: #181818;
+    border: none;
+    transition: all 0.2s;
+    position: relative;
+    a {
+      color: #181818;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #f58e88;
+      transition: all 0.5s;
+    }
+    &:hover::after {
+      width: 11rem;
     }
   }
 }
