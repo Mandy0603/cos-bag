@@ -35,6 +35,7 @@ class TagCollapse extends React.Component {
       <FilterCollapse
         filterItems={tag}
         updateFilter={this.props.updateTagFilters}
+        filterType="tags"
       />
     );
   }

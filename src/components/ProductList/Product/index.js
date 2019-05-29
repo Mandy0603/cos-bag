@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { addProduct } from "../../../services/Cart/actions";
 import ColorBlock from "../ColorBlock";
 
 class Product extends React.Component {
@@ -57,11 +59,19 @@ class Product extends React.Component {
           >
             Buy Now
           </button>
-          <button className="product__purchase-cart">Add to Cart</button>
+          <button
+            onClick={() => this.props.addProduct(this.props.product)}
+            className="product__purchase-cart"
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     );
   }
 }
 
-export default Product;
+export default connect(
+  null,
+  { addProduct }
+)(Product);

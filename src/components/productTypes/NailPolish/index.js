@@ -23,7 +23,7 @@ class NailPolish extends React.Component {
         <FilterBar category={"nailpolish"} />
         <FilterResult pages={this.props.match.params.pages} />
         <ProductList
-          productType={"Nail_Polish"}
+          productType={"Nail Polish"}
           category={this.props.match.params.subcategory}
           pages={this.props.match.params.pages}
         />

@@ -31,6 +31,7 @@ class CategoryCollapse extends React.Component {
       <FilterCollapse
         filterItems={category[this.props.category]}
         updateFilter={this.props.updateCategoryFilters}
+        filterType="category"
       />
     );
   }

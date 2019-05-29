@@ -1,9 +1,25 @@
 import React from "react";
+import { connect } from "react-redux";
 import Checkbox from "./Checkbox";
 
 class FilterCollapse extends React.Component {
   componentDidMount() {
-    this.selectedCheckboxes = new Set();
+    switch (this.props.filterType) {
+      case "brands":
+        this.selectedCheckboxes = new Set(this.props.brands);
+        break;
+      case "tags":
+        this.selectedCheckboxes = new Set(this.props.tags);
+        break;
+      case "category":
+        this.selectedCheckboxes = new Set(this.props.category);
+        break;
+      default:
+        this.selectedCheckboxes = new Set();
+        break;
+    }
+    console.log(this.props.filterType);
+    console.log(this.selectedCheckboxes);
   }
   toggleCheckbox = label => {
     if (this.selectedCheckboxes.has(label)) {
@@ -21,6 +37,8 @@ class FilterCollapse extends React.Component {
         label={label}
         handleCheckboxChange={this.toggleCheckbox}
         key={label}
+        defaultValue={this.defaultCheckboxValue}
+        filterType={this.props.filterType}
       />
     );
   };
@@ -32,4 +50,11 @@ class FilterCollapse extends React.Component {
   }
 }
 
-export default FilterCollapse;
+const mapStateToProps = state => {
+  return {
+    brands: state.filter.brands,
+    tags: state.filter.tags,
+    category: state.filter.category
+  };
+};
+export default connect(mapStateToProps)(FilterCollapse);

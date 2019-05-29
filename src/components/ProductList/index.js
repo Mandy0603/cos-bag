@@ -109,9 +109,12 @@ class ProductList extends React.Component {
     });
   };
   loadMorePages = page => {
+    console.log(this.props.productType);
     let nextPage = page + 1;
+    let productTypeWithoutSpace;
+    productTypeWithoutSpace = this.props.productType.replace(/\s+/g, "");
     history.push(
-      `/shop/${this.props.productType}/${this.props.category}/${nextPage}`
+      `/shop/${productTypeWithoutSpace}/${this.props.category}/${nextPage}`
     );
   };
   renderViewmoreButton = () => {

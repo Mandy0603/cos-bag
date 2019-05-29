@@ -1,4 +1,5 @@
 import React from "react";
+import FloatCart from "../FloatCart";
 import "./style.scss";
 
 const Skynav = () => {
@@ -25,8 +26,14 @@ const Skynav = () => {
         <div className="skynav__right wish-list ">
           <i className="heart outline icon" />
         </div>
-        <div className="skynav__right shopping-bag ">
-          <i class="shopping bag icon" />
+        <div className="shopping-bag ">
+          <div className="shopping-bag__display">
+            <i class="shopping bag icon" />
+            <span>3</span>{" "}
+          </div>
+          <div className="shopping-bag__hidden">
+            <FloatCart />
+          </div>
         </div>
       </div>
     </div>

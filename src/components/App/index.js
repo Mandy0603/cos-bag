@@ -3,7 +3,11 @@ import { Router, Route, Switch } from "react-router-dom";
 
 import history from "../../services/history";
 import Header from "../Header";
+import Banner from "../Banner";
+import Skynav from "../Skynav";
+import Navbar from "../Navbar";
 import Footer from "../Footer";
+// import FloatCart from "../FloatCart";
 import Home from "../Home";
 import Blush from "../productTypes/Blush";
 import Bronzer from "../productTypes/Bronzer";
@@ -21,7 +25,9 @@ const App = () => {
     <div>
       <Router history={history}>
         <div>
-          <Header />
+          <Banner />
+          <Skynav />
+          <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route
@@ -75,6 +81,7 @@ const App = () => {
               component={NailPolish}
             />
           </Switch>
+
           <Footer />
         </div>
       </Router>
