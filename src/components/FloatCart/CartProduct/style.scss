@@ -1,0 +1,146 @@
+.shelf-item {
+  display: flex;
+  align-items: center;
+  padding: 0rem 2rem;
+  height: 25rem;
+  border-bottom: 0.5px solid #18181848;
+
+  &__thumb {
+    width: 40%;
+  }
+  &__text {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    position: relative;
+    &-del {
+      position: absolute;
+      top: 0;
+      right: 0;
+      &:hover {
+        color: rgb(226, 88, 111);
+      }
+      &:hover + * {
+        text-decoration: line-through;
+      }
+    }
+    &-details {
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+
+      .brand {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      .name {
+        font-size: 1.5rem;
+      }
+      .quantity {
+        margin-top: auto;
+        font-size: 1.4rem;
+      }
+      .price {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// &__shelf-container {
+//     background-color: #5b5a5e;
+//     position: relative;
+//     height: 100%;
+//     padding-bottom: 20rem;
+
+//     .shelf-item {
+//       box-sizing: border-box;
+//       padding: 5%;
+
+//       transition: background-color 0.2s, opacity 0.2s;
+
+//       &::before {
+//         content: "";
+//         width: 90%;
+//         height: 2px;
+//         background-color: #fff;
+//         position: absolute;
+//         top: 0;
+//         left: 5%;
+//       }
+
+//       &--mouseover {
+//         background: #fff;
+
+//         .shelf-item__details {
+//           .title,
+//           .desc {
+//             text-decoration: line-through;
+//             opacity: 0.6;
+//           }
+//         }
+
+//         .shelf-item__price {
+//           text-decoration: line-through;
+//           opacity: 0.6;
+//         }
+//       }
+
+//       &__del {
+//         width: 16px;
+//         height: 16px;
+//         top: 15px;
+//         right: 5%;
+//         border-radius: 50%;
+//         position: absolute;
+
+//         z-index: 2;
+//         cursor: pointer;
+
+//         &:hover {
+//           background-position-x: -17px;
+//         }
+//       }
+
+//       &__thumb,
+//       &__details,
+//       &__price {
+//         display: inline-block;
+//         vertical-align: middle;
+//       }
+
+//       img {
+//         width: 16rem;
+//       }
+
+//       &__details {
+//         width: 57%;
+
+//         .title {
+//           color: #181818;
+//           margin: 0;
+//         }
+
+//         .desc {
+//           color: #5b5a5e;
+//           margin: 0;
+//         }
+//       }
+//       &__price {
+//         color: #eabf00;
+//         text-align: right;
+//         width: 25%;
+//       }
+//     }
+//   }
+
+//
+
+//
+
+//
+//   }
+// }

@@ -12,6 +12,10 @@ class Product extends React.Component {
   onPurchaseClick = link => {
     window.open(link, "_blank");
   };
+  onAddToCartClick = product => {
+    product.quantity = 1;
+    this.props.addProduct(product);
+  };
   render() {
     const {
       brand,
@@ -26,6 +30,9 @@ class Product extends React.Component {
       <div className="product__container">
         <div className="product__image">
           <img src={image_link} alt={name} />
+        </div>
+        <div className="product__wish-list ">
+          <i className="heart outline icon" />
         </div>
         <div className="product__description">
           <div className="product__description-top">
@@ -60,7 +67,7 @@ class Product extends React.Component {
             Buy Now
           </button>
           <button
-            onClick={() => this.props.addProduct(this.props.product)}
+            onClick={() => this.onAddToCartClick(this.props.product)}
             className="product__purchase-cart"
           >
             Add to Cart

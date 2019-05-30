@@ -136,14 +136,16 @@ class ProductList extends React.Component {
         </button>
       );
     } else {
-      return (
-        <button>
-          <a href="#bread_crumb">
-            Back to Top
-            <i class="caret up icon" />
-          </a>
-        </button>
-      );
+      if (!this.state.isLoading) {
+        return (
+          <button>
+            <a href="#bread_crumb">
+              Back to Top
+              <i class="caret up icon" />
+            </a>
+          </button>
+        );
+      }
     }
   };
   render() {
@@ -153,7 +155,11 @@ class ProductList extends React.Component {
     return (
       <React.Fragment>
         <div className="shelf__container">
-          {/* {isLoading && <Spinner />} */}
+          {isLoading && (
+            <div className="shelf__spinner">
+              <Spinner />
+            </div>
+          )}
           <div className="shelf__list">{this.renderProducts(products)}</div>
           <div className="btn__operation">{this.renderViewmoreButton()}</div>
         </div>

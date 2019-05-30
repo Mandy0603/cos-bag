@@ -2,12 +2,10 @@ import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 
 import history from "../../services/history";
-import Header from "../Header";
 import Banner from "../Banner";
 import Skynav from "../Skynav";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
-// import FloatCart from "../FloatCart";
 import Home from "../Home";
 import Blush from "../productTypes/Blush";
 import Bronzer from "../productTypes/Bronzer";
@@ -19,6 +17,7 @@ import LipLiner from "../productTypes/LipLiner";
 import Lipstick from "../productTypes/Lipstick";
 import Mascara from "../productTypes/Mascara";
 import NailPolish from "../productTypes/NailPolish";
+import ShoppingBag from "../ShoppingBag";
 
 const App = () => {
   return (
@@ -80,6 +79,7 @@ const App = () => {
               exact
               component={NailPolish}
             />
+            <Route path="/shop/shoppingbag" exact component={ShoppingBag} />
           </Switch>
 
           <Footer />

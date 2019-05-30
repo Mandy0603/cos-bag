@@ -18,8 +18,6 @@ class FilterCollapse extends React.Component {
         this.selectedCheckboxes = new Set();
         break;
     }
-    console.log(this.props.filterType);
-    console.log(this.selectedCheckboxes);
   }
   toggleCheckbox = label => {
     if (this.selectedCheckboxes.has(label)) {

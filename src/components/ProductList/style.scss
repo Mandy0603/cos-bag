@@ -3,6 +3,16 @@
   display: flex;
   flex-wrap: wrap;
 }
+.shelf__container {
+  position: relative;
+  width: 100%;
+}
+.shelf__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .product {
   &__container {
@@ -13,6 +23,7 @@
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.2s;
+    position: relative;
 
     &:hover {
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -27,6 +38,7 @@
 
     img {
       max-height: 100%;
+      max-width: 100%;
       width: auto;
       margin: auto;
     }
@@ -37,6 +49,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  &__wish-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    color: #383737;
   }
   &__color {
     display: flex;
