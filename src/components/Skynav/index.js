@@ -5,6 +5,11 @@ import FloatCart from "../FloatCart";
 import "./style.scss";
 
 class Skynav extends React.Component {
+  displayItemNumber = () => {
+    if (this.props.itemQuantity !== 0) {
+      return this.props.itemQuantity;
+    } else return null;
+  };
   render() {
     return (
       <div className="skynav">
@@ -42,7 +47,7 @@ class Skynav extends React.Component {
               className="shopping-bag__display"
             >
               <i className="shopping bag icon" />
-              <span>{this.props.itemQuantity}</span>{" "}
+              <span>{this.displayItemNumber()}</span>{" "}
             </div>
             <div className="shopping-bag__hidden">
               <FloatCart />
