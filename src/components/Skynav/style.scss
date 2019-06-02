@@ -55,3 +55,21 @@
     visibility: hidden;
   }
 }
+
+.wishlist {
+  display: flex;
+  flex-direction: column;
+
+  &:hover &__hidden {
+    color: #181818;
+    opacity: 1;
+    visibility: visible;
+  }
+  &__hidden {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}

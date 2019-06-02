@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addProduct } from "../../../services/Cart/actions";
+import { addToWishlist } from "../../../services/Wishlist/actions";
+import Checkbox from "./Checkbox";
 import ColorBlock from "../ColorBlock";
 
 class Product extends React.Component {
@@ -16,6 +18,7 @@ class Product extends React.Component {
     product.quantity = 1;
     this.props.addProduct(product);
   };
+
   render() {
     const {
       brand,
@@ -32,7 +35,7 @@ class Product extends React.Component {
           <img src={image_link} alt={name} />
         </div>
         <div className="product__wish-list ">
-          <i className="heart outline icon" />
+          <Checkbox product={this.props.product} />
         </div>
         <div className="product__description">
           <div className="product__description-top">
@@ -80,5 +83,5 @@ class Product extends React.Component {
 
 export default connect(
   null,
-  { addProduct }
+  { addProduct, addToWishlist }
 )(Product);

@@ -2,12 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import history from "../../services/history";
 import FloatCart from "../FloatCart";
+import WishList from "../WishList";
 import "./style.scss";
 
 class Skynav extends React.Component {
-  displayItemNumber = () => {
-    if (this.props.itemQuantity !== 0) {
-      return this.props.itemQuantity;
+  displayCartItemNumber = () => {
+    if (this.props.cartItemQuantity !== 0) {
+      return this.props.cartItemQuantity;
+    } else return null;
+  };
+  displayWishlistItemNumber = () => {
+    if (this.props.wishlistItemQuantity !== 0) {
+      return this.props.wishlistItemQuantity;
     } else return null;
   };
   render() {
@@ -36,8 +42,19 @@ class Skynav extends React.Component {
             <i className="user outline icon" />
             <div>My Account</div>
           </div>
-          <div className="skynav__right wish-list ">
-            <i className="heart outline icon" />
+          <div className="skynav__right wishlist ">
+            <div
+              onClick={() => {
+                history.push("/shop/wishlist");
+              }}
+              className="wishlist__display"
+            >
+              <i className="heart outline icon" />
+              <span>{this.displayWishlistItemNumber()}</span>{" "}
+            </div>
+            <div className="wishlist__hidden">
+              <WishList />
+            </div>
           </div>
           <div className="shopping-bag ">
             <div
@@ -47,7 +64,7 @@ class Skynav extends React.Component {
               className="shopping-bag__display"
             >
               <i className="shopping bag icon" />
-              <span>{this.displayItemNumber()}</span>{" "}
+              <span>{this.displayCartItemNumber()}</span>{" "}
             </div>
             <div className="shopping-bag__hidden">
               <FloatCart />
@@ -59,7 +76,10 @@ class Skynav extends React.Component {
   }
 }
 const mapStateToProps = state => {
-  return { itemQuantity: state.total.data.productQuantity };
+  return {
+    cartItemQuantity: state.total.data.productQuantity,
+    wishlistItemQuantity: state.wishlistTotal.data.productQuantity
+  };
 };
 
 export default connect(mapStateToProps)(Skynav);

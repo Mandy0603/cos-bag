@@ -18,6 +18,7 @@ import Lipstick from "../productTypes/Lipstick";
 import Mascara from "../productTypes/Mascara";
 import NailPolish from "../productTypes/NailPolish";
 import ShoppingBag from "../ShoppingBag";
+import WishListPage from "../WishListPage";
 
 const App = () => {
   return (
@@ -80,6 +81,7 @@ const App = () => {
               component={NailPolish}
             />
             <Route path="/shop/shoppingbag" exact component={ShoppingBag} />
+            <Route path="/shop/wishlist" exact component={WishListPage} />
           </Switch>
 
           <Footer />
