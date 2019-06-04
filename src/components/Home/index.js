@@ -9,7 +9,7 @@ const Home = () => {
     <div className="homepage-container">
       <CPics />
       <Story />
-      <Bestseller />
+      {/* <Bestseller /> */}
     </div>
   );
 };

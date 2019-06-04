@@ -20,7 +20,7 @@ const Footer = () => {
           <ul>
             <li>About CosBag</li>
             <li>Careers</li>
-            <li>CosBag stands social impact</li>
+
             <li>Affiliates</li>
             <li>Supply Chain Transparency</li>
             <li>Sitemap</li>
@@ -34,8 +34,8 @@ const Footer = () => {
             <li>My Account</li>
             <li>Order Status</li>
             <li>Beauty Insider</li>
-            <li>Rewards Bazaar</li>
-            <li>Loves</li>
+
+            <li>My Wishlist</li>
             <li>Flash Unlimited Shipping</li>
           </ul>
         </div>
@@ -48,7 +48,7 @@ const Footer = () => {
             <li>Billing</li>
             <li>Returns {"&"} Exchanges</li>
             <li>International Shipments</li>
-            <li>Custoemr Service</li>
+            <li>Customer Service</li>
             <li>Accessibility</li>
           </ul>
         </div>

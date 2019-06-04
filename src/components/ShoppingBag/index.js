@@ -35,7 +35,7 @@ class ShoppingBag extends Component {
 
     const orderSummary = cartProducts.map(p => {
       return (
-        <div>
+        <div className="bag-container__summary-items">
           <div className="details-name">{p.name}</div>
           <div className="details-calc">
             <span className="quantity">Quantity: {p.quantity}</span>

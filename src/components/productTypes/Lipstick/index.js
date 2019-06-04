@@ -10,12 +10,12 @@ class Lipstick extends React.Component {
   render() {
     return (
       <div className="blush">
-        <div className="blush__top">
+        {/* <div className="blush__top">
           <img
             src={require("../../../static/img/carousel-1.jpg")}
             alt="display"
           />
-        </div>
+        </div> */}
         <ProductBreadcrumb
           category={"Lipstick"}
           subcategory={this.props.match.params.subcategory}

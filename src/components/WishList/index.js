@@ -70,12 +70,11 @@ class ItemList extends Component {
 
     return (
       <div className="float-cart">
-        {/* <div className="float-cart__shelf-container"> */}
         {!!products.length && (
           <div className="shelf-container">
             <div className="shelf-container__products">{products}</div>
             <div className="shelf-container__footer">
-              <div onClick={() => this.viewWishlist} className="buy-btn">
+              <div onClick={() => this.viewWishlist()} className="buy-btn">
                 View Products in Wishlist <span>&rarr;</span>
               </div>
             </div>

@@ -10,12 +10,12 @@ class Bronzer extends React.Component {
   render() {
     return (
       <div className="bronzer">
-        <div className="bronzer__top">
+        {/* <div className="bronzer__top">
           <img
             src={require("../../../static/img/carousel-1.jpg")}
             alt="display"
           />
-        </div>
+        </div> */}
         <ProductBreadcrumb
           category={"Bronzer"}
           subcategory={this.props.match.params.subcategory}

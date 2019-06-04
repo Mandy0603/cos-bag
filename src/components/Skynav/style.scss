@@ -20,8 +20,7 @@
     font-size: 5rem;
     font-family: "Cookie", cursive;
   }
-  &__left,
-  &__right {
+  &__left {
     display: flex;
     font-size: 1.3rem;
     height: 100%;
@@ -33,6 +32,16 @@
       cursor: pointer;
     }
   }
+
+  &__right {
+    display: flex;
+    font-size: 1.3rem;
+    height: 100%;
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+    cursor: pointer;
+  }
   &__left {
     width: 8rem;
     justify-content: space-between;
@@ -41,6 +50,9 @@
 .shopping-bag {
   display: flex;
   flex-direction: column;
+  // :hover {
+  //   color: #f58e88;
+  // }
 
   &:hover &__hidden {
     color: #181818;
@@ -53,6 +65,11 @@
     right: 0;
     opacity: 0;
     visibility: hidden;
+  }
+  &__display {
+    &:hover {
+      color: #f58e88;
+    }
   }
 }
 
@@ -65,11 +82,38 @@
     opacity: 1;
     visibility: visible;
   }
+  // :hover {
+  //   color: #f58e88;
+  // }
   &__hidden {
     position: absolute;
     top: 100%;
     right: 0;
     opacity: 0;
     visibility: hidden;
+  }
+  &__display {
+    &:hover {
+      color: #f58e88;
+    }
+  }
+}
+.user-admin {
+  display: flex;
+  & > *:hover {
+    color: #f58e88;
+  }
+}
+.sign-out {
+  background-color: transparent;
+  border: none;
+
+  text-decoration: underline;
+  margin-left: 2rem;
+}
+.user-account {
+  &:hover {
+    color: #f58e88;
+    cursor: pointer;
   }
 }

@@ -8,6 +8,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Home from "../Home";
 import Account from "../Account";
+import UserInfo from "../UserInfo";
 import Blush from "../productTypes/Blush";
 import Bronzer from "../productTypes/Bronzer";
 import Eyebrow from "../productTypes/Eyebrow";
@@ -87,6 +88,7 @@ class App extends React.Component {
               <Route path="/shop/wishlist" exact component={WishListPage} />
 
               <Route path="/customers/myaccount" exact component={Account} />
+              <Route path="/customers/userInfo" exact component={UserInfo} />
             </Switch>
 
             <Footer />

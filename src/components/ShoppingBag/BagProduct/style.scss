@@ -27,6 +27,7 @@
       &:hover + * {
         text-decoration: line-through;
       }
+      cursor: pointer;
     }
     &-details {
       height: 80%;
