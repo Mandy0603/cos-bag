@@ -123,12 +123,6 @@ class Account extends React.Component {
                   Login
                 </button>
               </div>
-
-              <div class="form-group">
-                <a href="#" class="ForgetPwd">
-                  Forget Password?
-                </a>
-              </div>
             </form>
           </div>
           <div class="col-md-6 login-form-2">

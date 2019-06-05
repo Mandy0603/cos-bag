@@ -24,9 +24,13 @@ export const fetchProducts = (
   callback
 ) => dispatch => {
   axios
-    .get(`${productsAPI}?product_type=${productType}`)
+    .get(productsAPI)
     .then(res => {
       let products = res.data;
+
+      if (!!productType) {
+        products = products.filter(p => p.product_type === productType);
+      }
 
       if (!!category && category.length > 0) {
         products = products.filter(p => p.category === category);

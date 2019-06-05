@@ -1,6 +1,5 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import firebase from "firebase";
 import history from "../../services/history";
 import Banner from "../Banner";
 import Skynav from "../Skynav";

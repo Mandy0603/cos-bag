@@ -23,7 +23,7 @@ class Eyeshadow extends React.Component {
         <FilterBar category={"eyeshadow"} />
         <FilterResult pages={this.props.match.params.pages} />
         <ProductList
-          productType={"Eyeshadow"}
+          productType={"eyeshadow"}
           category={this.props.match.params.subcategory}
           pages={this.props.match.params.pages}
         />

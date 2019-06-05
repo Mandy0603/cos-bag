@@ -26,7 +26,7 @@ class Foundation extends React.Component {
           pages={this.props.match.params.pages}
         />
         <ProductList
-          productType={"Foundation"}
+          productType={"foundation"}
           category={this.props.match.params.subcategory}
           pages={this.props.match.params.pages}
         />
