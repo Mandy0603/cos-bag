@@ -1,0 +1,43 @@
+.map {
+  &-container {
+    width: 100%;
+    padding: 5rem 10rem;
+    height: 60rem;
+    display: flex;
+  }
+  &-area {
+    width: 60%;
+    height: 100%;
+  }
+  &-transport {
+    width: 40%;
+    padding: 6rem 0;
+    h2 {
+      padding: 0 0 0 4rem;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    &__tram {
+      list-style: none;
+      text-align: left;
+      font-size: 1.3rem;
+      margin-top: 4rem;
+    }
+  }
+  &__marker {
+    height: 30rem;
+    width: 30rem;
+  }
+
+  &__text {
+    width: 10rem;
+    color: rgb(192, 190, 190);
+    font-size: 2rem;
+  }
+}
+#map__icon {
+  color: rgb(114, 2, 2);
+  width: 10%;
+  font-size: 3rem;
+}

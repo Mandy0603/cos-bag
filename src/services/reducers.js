@@ -6,6 +6,7 @@ import cartReducer from "./Cart/reducer";
 import wishlistReducer from "./Wishlist/reducer";
 import totalReducer from "./Total/reducer";
 import wishlistTotalReducer from "./WishlistTotal/reducer";
+import singleItemReducer from "./Item/reducer";
 
 export default combineReducers({
   filter: filterReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
   cart: cartReducer,
   wishlist: wishlistReducer,
   total: totalReducer,
-  wishlistTotal: wishlistTotalReducer
+  wishlistTotal: wishlistTotalReducer,
+  item: singleItemReducer
 });

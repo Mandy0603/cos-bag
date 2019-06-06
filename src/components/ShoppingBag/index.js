@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import history from "../../services/history";
 import { loadCart, removeProduct } from "../../services/Cart/actions";
 import { updateCart } from "../../services/Total/actions";
+import { formatPrice } from "../../services/util";
 import BagProduct from "./BagProduct";
 
 import "./style.scss";
@@ -20,10 +21,12 @@ class ShoppingBag extends Component {
     if (!productQuantity) {
       alert("Add some product in the cart!");
     } else {
-      alert(`Checkout - Subtotal: ${currencyFormat} ${totalPrice}`);
+      alert(
+        `Checkout - Subtotal: ${currencyFormat} ${formatPrice(totalPrice)}`
+      );
     }
   };
-
+  formatPrice;
   render() {
     const { cartTotal, cartProducts, removeProduct } = this.props;
 
@@ -61,9 +64,9 @@ class ShoppingBag extends Component {
                   <div>Total:</div>
 
                   <div>
-                    {`${cartTotal.currencyFormat} ${
+                    {`${cartTotal.currencyFormat} ${formatPrice(
                       this.props.cartTotal.totalPrice
-                    }`}
+                    )}`}
                   </div>
                 </div>
                 <div

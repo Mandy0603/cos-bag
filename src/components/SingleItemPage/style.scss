@@ -1,0 +1,85 @@
+.item {
+  &__container {
+    padding: 5rem 12rem;
+    display: flex;
+  }
+  &__image {
+    width: 45%;
+    height: auto;
+  }
+  &__description {
+    width: 70%;
+    padding: 0 5rem;
+    &-brand {
+      font-size: 1.5rem;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+    &-name {
+      font-size: 2.5rem;
+      letter-spacing: 0.5px;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      position: relative;
+      &::after {
+        margin: 2rem 0;
+        display: block;
+        width: 3rem;
+        border-bottom: 1px solid;
+        content: "";
+      }
+    }
+    &-description {
+      font-size: 1.2rem;
+    }
+    &-price {
+      font-size: 2.5rem;
+      margin-top: 3rem;
+    }
+    &-colors {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 200;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    &-colorsTitle {
+      font-weight: 400;
+    }
+    &-colorsBlock {
+      display: flex;
+    }
+  }
+}
+.descriptions__colors {
+  &-display {
+    height: 3rem;
+    width: 3rem;
+    margin-top: 1rem;
+    margin-right: 3px;
+    position: relative;
+    cursor: pointer;
+    &:hover + div {
+      opacity: 1;
+      visibility: visible;
+    }
+    &:hover {
+      transform: scale(1.1);
+      z-index: 5;
+    }
+  }
+  &-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6rem) translateX(-25%);
+    color: #fff;
+
+    position: absolute;
+    background-color: #181818;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    z-index: 10;
+    font-size: 1.2rem;
+  }
+}

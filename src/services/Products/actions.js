@@ -25,6 +25,7 @@ export const fetchProducts = (
 ) => dispatch => {
   axios
     .get(productsAPI)
+    // .get(`${productsAPI}?product_type=${productType}`)
     .then(res => {
       let products = res.data;
 

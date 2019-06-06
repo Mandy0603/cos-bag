@@ -5,6 +5,7 @@ import history from "../../services/history";
 import { loadCart, removeProduct } from "../../services/Cart/actions";
 import { updateCart } from "../../services/Total/actions";
 import CartProduct from "./CartProduct";
+import { formatPrice } from "../../services/util";
 
 import "./style.scss";
 
@@ -70,9 +71,9 @@ class FloatCart extends Component {
               <div className="subtotal">
                 <div className="subtotal-title">SUBTOTAL</div>
                 <div className="subtotal-price">
-                  {`${cartTotal.currencyFormat} ${
+                  {`${cartTotal.currencyFormat} ${formatPrice(
                     this.props.cartTotal.totalPrice
-                  }`}
+                  )}`}
                 </div>
               </div>
               <div onClick={() => this.proceedToCheckout()} className="buy-btn">

@@ -20,6 +20,8 @@ import Mascara from "../productTypes/Mascara";
 import NailPolish from "../productTypes/NailPolish";
 import ShoppingBag from "../ShoppingBag";
 import WishListPage from "../WishListPage";
+import StoreLocation from "../StoreLocation";
+import SingleItemPage from "../SingleItemPage";
 
 class App extends React.Component {
   render() {
@@ -88,6 +90,12 @@ class App extends React.Component {
 
               <Route path="/customers/myaccount" exact component={Account} />
               <Route path="/customers/userInfo" exact component={UserInfo} />
+              <Route path="/storelocation" exact component={StoreLocation} />
+              <Route
+                path="/view/:productType/:itemName/:id"
+                exact
+                component={SingleItemPage}
+              />
             </Switch>
 
             <Footer />

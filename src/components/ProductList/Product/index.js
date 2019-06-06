@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import history from "../../../services/history";
 import { addProduct } from "../../../services/Cart/actions";
 import { addToWishlist } from "../../../services/Wishlist/actions";
 import Checkbox from "./Checkbox";
@@ -8,7 +9,7 @@ import ColorBlock from "../ColorBlock";
 class Product extends React.Component {
   renderColor = colors => {
     return colors.map(color => {
-      return <ColorBlock color={color} />;
+      return <ColorBlock key={color.toString()} color={color} />;
     });
   };
   onPurchaseClick = link => {
@@ -27,11 +28,18 @@ class Product extends React.Component {
       price_sign,
       image_link,
       product_link,
-      product_colors
+      product_colors,
+      product_type,
+      id
     } = this.props.product;
     return (
       <div className="product__container">
-        <div className="product__image">
+        <div
+          onClick={() => {
+            history.push(`/view/${product_type}/${name}/${id}`);
+          }}
+          className="product__image"
+        >
           <img src={image_link} alt={name} />
         </div>
         <div className="product__wish-list ">

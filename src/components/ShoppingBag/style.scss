@@ -37,13 +37,14 @@
   &__details {
     font-size: 1.5rem;
     .details-name {
-      font-weight: 400;
+      font-weight: 500;
     }
     .details-calc {
       display: flex;
       justify-content: space-between;
       font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      color: grey;
     }
   }
   &__price {
