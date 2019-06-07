@@ -1,0 +1,11 @@
+.color-selector {
+  display: flex;
+  &__title {
+    margin-right: 1rem;
+  }
+}
+select:active,
+select:hover,
+select:focus {
+  outline: none;
+}

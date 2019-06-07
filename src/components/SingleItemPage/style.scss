@@ -29,6 +29,30 @@
         content: "";
       }
     }
+    &-admin {
+      margin: 2rem 0;
+
+      &-quantityAndColor {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.8rem;
+      }
+      &-addToBag {
+        text-align: center;
+        padding: 1rem 4rem;
+        margin: 3rem auto;
+        width: 40%;
+        font-size: 2rem;
+        background-color: #f58e88;
+        color: #fff;
+        cursor: pointer;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
     &-description {
       font-size: 1.2rem;
     }

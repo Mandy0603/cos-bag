@@ -2,23 +2,27 @@ import React from "react";
 import "./style.scss";
 
 class QuantitySelector extends React.Component {
-  state = { quantity: 0 };
+  state = { quantity: 1 };
   minusOne = () => {
-    if (this.state.quantity >= 1) {
+    if (this.state.quantity >= 2) {
       this.setState(({ quantity }) => ({ quantity: quantity - 1 }));
     }
+    this.props.onQuantityChange(this.state.quantity);
   };
 
   plusOne = () => {
     if (this.state.quantity <= 9) {
-      this.setState(({ quantity }) => ({ quantity: quantity + 1 }));
+      this.setState(
+        ({ quantity }) => ({ quantity: quantity + 1 }),
+        () => this.props.onQuantityChange(this.state.quantity)
+      );
     }
   };
 
   render() {
     let classNameMinus = null;
     let classNamePlus = null;
-    if (this.state.quantity === 0) {
+    if (this.state.quantity === 1) {
       classNameMinus = "quantitySelector__content-sign-grey";
     } else {
       classNameMinus = "quantitySelector__content-sign";
