@@ -9,9 +9,9 @@ class FilterButton extends React.Component {
 
   renderArrow = () => {
     if (this.state.collapseShow) {
-      return <i class="caret up icon" />;
+      return <i className="caret up icon" />;
     } else {
-      return <i class="caret down icon" />;
+      return <i className="caret down icon" />;
     }
   };
 

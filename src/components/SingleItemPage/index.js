@@ -2,26 +2,29 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchItem } from "../../services/Item/actions";
 import { addProduct } from "../../services/Cart/actions";
+import { addToWishlist } from "../../services/Wishlist/actions";
 import QuantitySelector from "./QuantitySelector";
-import ColorSelector from "./ColorSelector";
+import Modal from "../Modal";
 
 import "./style.scss";
 
 class SingleItemPage extends React.Component {
   state = {
-    isLoading: false,
+    isLoading: null,
     quantity: 1,
     color: null
   };
-  componentWillMount() {
-    const { id } = this.props.match.params;
 
-    this.props.fetchItem(id);
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    this.setState({ isLoading: true });
+    const { id } = this.props.match.params;
+    this.props.fetchItem(id, () => this.setState({ isLoading: false }));
   }
   renderColors = colors => {
     return colors.map(color => {
       return (
-        <div className="descriptions__colors">
+        <div key={color.colour_name} className="descriptions__colors">
           <div
             className="descriptions__colors-display"
             style={{ backgroundColor: `${color.hex_value}` }}
@@ -69,12 +72,6 @@ class SingleItemPage extends React.Component {
                   this.setState({ quantity: quantity });
                 }}
               />
-              <ColorSelector
-                colors={product_colors}
-                onSelectionChange={color => {
-                  this.setState({ color: color });
-                }}
-              />
             </div>
             <div>
               <button
@@ -83,6 +80,12 @@ class SingleItemPage extends React.Component {
               >
                 Add to Bag
               </button>
+              <button
+                onClick={() => this.onAddToWishlistClick()}
+                className="item__description-admin-addToWishlist"
+              >
+                Add to Wishlist
+              </button>
             </div>
           </div>
         </div>
@@ -90,42 +93,23 @@ class SingleItemPage extends React.Component {
     );
   };
   onAddToBagClick = () => {
-    let { color } = this.props.item;
-    let stateColor = this.state.color;
-    let stateQuantity = this.state.quantity;
-
-    if (stateColor) {
-      if (this.props.item.color) {
-        let found = false;
-        for (let i = 0; i < this.props.item.color.length; i++) {
-          if (Object.keys(this.props.item.color[i]) == stateColor) {
-            this.props.item.color[i][
-              Object.keys(this.props.item.color[i])
-            ] += stateQuantity;
-            found = true;
-            break;
-          }
-        }
-        if (!found) {
-          this.props.item.color.push({ [stateColor]: stateQuantity });
-        }
-        console.log(this.props.item.color);
-      } else {
-        this.props.item.color = Array({
-          [stateColor]: stateQuantity
-        });
-        this.props.addProduct(this.props.item);
-      }
-    } else {
-      return null;
-    }
+    this.props.item.quantity = this.state.quantity;
+    this.props.addProduct(this.props.item);
   };
+  onAddToWishlistClick = () => {
+    this.props.addToWishlist(this.props.item);
+  };
+
   render() {
-    return (
-      <div className="item item__container">
-        {!!this.props.item && this.renderItem()}
-      </div>
-    );
+    if (!this.state.isLoading) {
+      return (
+        <div className="item item__container">
+          {!!this.props.item && this.renderItem()}
+        </div>
+      );
+    } else {
+      return <Modal />;
+    }
   }
 }
 const mapStateToProps = state => {
@@ -134,5 +118,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchItem, addProduct }
+  { addToWishlist, fetchItem, addProduct }
 )(SingleItemPage);

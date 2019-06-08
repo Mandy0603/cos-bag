@@ -20,9 +20,9 @@ class Checkbox extends React.Component {
   };
   renderHeart = () => {
     if (this.state.isChecked) {
-      return <i class="heart icon wishlist-heart" />;
+      return <i className="heart icon wishlist-heart" />;
     } else {
-      return <i class="heart outline icon wishlist-heart" />;
+      return <i className="heart outline icon wishlist-heart" />;
     }
   };
   render() {

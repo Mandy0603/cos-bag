@@ -22,6 +22,7 @@ import ShoppingBag from "../ShoppingBag";
 import WishListPage from "../WishListPage";
 import StoreLocation from "../StoreLocation";
 import SingleItemPage from "../SingleItemPage";
+import "../style.scss";
 
 class App extends React.Component {
   render() {

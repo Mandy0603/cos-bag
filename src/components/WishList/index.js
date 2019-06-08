@@ -56,7 +56,7 @@ class ItemList extends Component {
   };
 
   render() {
-    const { wishlistTotal, listProducts, removeFromWishlist } = this.props;
+    const { listProducts, removeFromWishlist } = this.props;
 
     const products = listProducts.map(p => {
       return (

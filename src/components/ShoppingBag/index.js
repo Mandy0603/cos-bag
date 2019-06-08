@@ -14,8 +14,7 @@ class ShoppingBag extends Component {
     const {
       totalPrice,
       productQuantity,
-      currencyFormat,
-      currencyId
+      currencyFormat
     } = this.props.cartTotal;
 
     if (!productQuantity) {

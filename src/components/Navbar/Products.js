@@ -22,7 +22,7 @@ class Products extends React.Component {
     const productWithoutSpace = product.replace(/\s+/g, "");
     return (
       <li className="navbar__item">
-        <Link to={`/shop/${productWithoutSpace}/all`} class="navbar__link">
+        <Link to={`/shop/${productWithoutSpace}/all`} className="navbar__link">
           {product}
         </Link>
         <div className="navbar__hidden">

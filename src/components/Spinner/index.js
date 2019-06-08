@@ -5,6 +5,7 @@ const Spinner = () => {
   return (
     <div className="lds-heart">
       <div />
+      <div className="modal" />
     </div>
   );
 };

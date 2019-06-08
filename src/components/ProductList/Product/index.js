@@ -25,22 +25,26 @@ class Product extends React.Component {
       brand,
       name,
       price,
-      price_sign,
       image_link,
       product_link,
       product_colors,
       product_type,
       id
     } = this.props.product;
+
+    let nameModified = name.replace("#", "-");
+    nameModified = nameModified.split(" ").join("_");
+
     return (
       <div className="product__container">
         <div
           onClick={() => {
-            history.push(`/view/${product_type}/${name}/${id}`);
+            history.push(`/view/${product_type}/${nameModified}/${id}`);
           }}
           className="product__image"
         >
           <img src={image_link} alt={name} />
+          <div className="product__image-details">View Details</div>
         </div>
         <div className="product__wish-list ">
           <Checkbox product={this.props.product} />
@@ -59,7 +63,7 @@ class Product extends React.Component {
 
           <div className="product__description-bottom">
             <div className="product__price">
-              <span>{price_sign || "$"}</span>
+              <span>{"$"}</span>
               <h4>{price || "0.0"}</h4>
             </div>
             <div className="product__color">

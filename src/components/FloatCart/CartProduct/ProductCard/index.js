@@ -4,9 +4,6 @@ class ProductCard extends React.Component {
   state = {
     isMouseOver: false
   };
-  componentWillReceiveProps(props) {
-    console.log("productcard:" + props);
-  }
 
   handleMouseOver = () => {
     this.setState({ isMouseOver: true });
@@ -22,7 +19,7 @@ class ProductCard extends React.Component {
       classes.push("shelf-item--mouseover");
     }
 
-    const { color, product, removeProduct } = this.props;
+    const { product, removeProduct } = this.props;
     return (
       <div className={classes.join(" ")}>
         <div className="shelf-item__thumb">
@@ -41,8 +38,7 @@ class ProductCard extends React.Component {
           <div className="shelf-item__text-details">
             <p className="brand">{product.brand}</p>
             <p className="name">{product.name}</p>
-            <p className="color">Color: {Object.keys(color)}</p>
-            <p className="quantity">Quantity: {color[Object.keys(color)]}</p>
+            <p className="quantity">Quantity: {product.quantity}</p>
             <p className="price">{`${product.price_sign || "$"}  ${
               product.price
             }`}</p>

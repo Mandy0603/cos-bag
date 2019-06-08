@@ -38,11 +38,12 @@
         align-items: center;
         font-size: 1.8rem;
       }
-      &-addToBag {
+      &-addToBag,
+      &-addToWishlist {
         text-align: center;
         padding: 1rem 4rem;
         margin: 3rem auto;
-        width: 40%;
+        min-width: 45%;
         font-size: 2rem;
         background-color: #f58e88;
         color: #fff;
@@ -51,6 +52,11 @@
         &:focus {
           outline: 0;
         }
+      }
+      &-addToWishlist {
+        color: #3d3d3d;
+        background-color: #f5ee88;
+        margin-left: 3rem;
       }
     }
     &-description {
@@ -73,6 +79,7 @@
     }
     &-colorsBlock {
       display: flex;
+      flex-wrap: wrap;
     }
   }
 }

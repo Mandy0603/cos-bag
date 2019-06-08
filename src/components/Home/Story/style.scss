@@ -1,5 +1,5 @@
 .cosmetic-story {
-  padding: 8rem 3rem;
+  padding: 8rem 6rem;
 
   img {
     margin: 2rem 0;
@@ -16,6 +16,9 @@
       width: 3rem;
       border-bottom: 1px solid;
       content: "";
+    }
+    @media screen and (max-width: 1200px) {
+      font-size: 2.5rem;
     }
   }
   .cosmetic-text {
@@ -69,14 +72,14 @@
       margin-right: 8%;
 
       img {
-        width: 55rem;
+        width: 95%;
       }
     }
     &-2 {
       width: 50%;
       padding: 0 0 0 90px;
       img {
-        width: 45rem;
+        width: 95%;
         float: right;
       }
       #description-2 {
@@ -104,7 +107,7 @@
       display: flex;
 
       img {
-        width: 40rem;
+        width: 85%;
         margin-right: 4rem;
       }
 

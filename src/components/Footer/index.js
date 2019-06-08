@@ -8,10 +8,10 @@ const Footer = () => {
         <div className="footer-brand__name">COS BAG</div>
         <div className="footer-brand__contact">
           Get social with us
-          <i class="facebook square icon" />
-          <i class="instagram icon" />
-          <i class="twitter icon" />
-          <i class="wechat icon" />
+          <i className="facebook square icon" />
+          <i className="instagram icon" />
+          <i className="twitter icon" />
+          <i className="wechat icon" />
         </div>
       </div>
       <div className="footer-nav">

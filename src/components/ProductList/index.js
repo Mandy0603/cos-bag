@@ -4,7 +4,7 @@ import history from "../../services/history";
 
 import { fetchProducts } from "../../services/Products/actions";
 import Product from "./Product";
-import Spinner from "../Spinner";
+import Modal from "../Modal";
 
 import "./style.scss";
 
@@ -132,7 +132,7 @@ class ProductList extends React.Component {
           }}
         >
           View More
-          <i class="caret down icon" />
+          <i className="caret down icon" />
         </button>
       );
     } else {
@@ -141,7 +141,7 @@ class ProductList extends React.Component {
           <button>
             <a href="#bread_crumb">
               Back to Top
-              <i class="caret up icon" />
+              <i className="caret up icon" />
             </a>
           </button>
         );
@@ -157,7 +157,7 @@ class ProductList extends React.Component {
         <div className="shelf__container">
           {isLoading && (
             <div className="shelf__spinner">
-              <Spinner />
+              <Modal />
             </div>
           )}
           <div className="shelf__list">{this.renderProducts(products)}</div>

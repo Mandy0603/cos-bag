@@ -7,7 +7,7 @@ class WishlistProduct extends React.Component {
     return (
       <div className="wishlist-item">
         <div className="wishlist-item__image">
-          <img src={product.image_link} />
+          <img src={product.image_link} alt={product.id} />
         </div>
         <div
           onClick={() => this.props.removeProduct(product)}
