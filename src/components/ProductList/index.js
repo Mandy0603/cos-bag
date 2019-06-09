@@ -104,7 +104,7 @@ class ProductList extends React.Component {
     } else {
       pagesShow = this.props.pages;
     }
-    return products.slice(0, 30 * pagesShow).map(product => {
+    return products.slice(0, 36 * pagesShow).map(product => {
       return <Product key={product.id} product={product} />;
     });
   };
@@ -124,7 +124,7 @@ class ProductList extends React.Component {
     } else {
       pagesShow = this.props.pages;
     }
-    if (pagesShow * 30 < this.props.products.length) {
+    if (pagesShow * 36 < this.props.products.length) {
       return (
         <button
           onClick={() => {

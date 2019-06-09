@@ -15,9 +15,9 @@ class FilterResult extends React.Component {
     } else {
       pageCount = this.props.pages;
     }
-    return pageCount * 30 > this.props.products.length
+    return pageCount * 36 > this.props.products.length
       ? this.props.products.length
-      : pageCount * 30;
+      : pageCount * 36;
   };
   render() {
     return (

@@ -16,7 +16,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
+    width: 50%;
     font-size: 5rem;
     font-family: "Cookie", cursive;
     cursor: pointer;
@@ -25,9 +25,12 @@
     display: flex;
     font-size: 1.3rem;
     height: 100%;
-    &:not(:last-child) {
-      margin-right: 4rem;
+    width: 14rem;
+    justify-content: space-between;
+    @media screen and (max-width: 1024px) {
+      font-size: 1.5rem;
     }
+
     & > *:hover {
       color: #f58e88;
       cursor: pointer;
@@ -42,18 +45,14 @@
       margin-right: 4rem;
     }
     cursor: pointer;
-  }
-  &__left {
-    width: 8rem;
-    justify-content: space-between;
+    @media screen and (max-width: 1024px) {
+      font-size: 1.5rem;
+    }
   }
 }
 .shopping-bag {
   display: flex;
   flex-direction: column;
-  // :hover {
-  //   color: #f58e88;
-  // }
 
   &:hover &__hidden {
     color: #181818;
@@ -83,9 +82,6 @@
     opacity: 1;
     visibility: visible;
   }
-  // :hover {
-  //   color: #f58e88;
-  // }
   &__hidden {
     position: absolute;
     top: 100%;
