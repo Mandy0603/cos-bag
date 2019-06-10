@@ -27,6 +27,17 @@ class ProductList extends React.Component {
       sortBy
     } = nextProps;
 
+    if (category !== this.props.category) {
+      this.handleFetchProducts(
+        productType,
+        category,
+        undefined,
+        undefined,
+        undefined,
+        undefined
+      );
+    }
+
     if (brandFilters !== this.props.brandFilters) {
       this.handleFetchProducts(
         productType,

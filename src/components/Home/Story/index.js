@@ -67,7 +67,7 @@ const Story = () => {
             <ShopButton
               id="story3-link"
               link="/shop/nailpolish/all"
-              content={"read more"}
+              content={"shop now"}
             />
           </div>
         </div>

@@ -5,11 +5,21 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  @media screen and (max-width: 667px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 414px) {
+    font-size: 1.3rem;
+  }
+
   &__filters {
     display: flex;
 
     & > * {
       margin-right: 2rem;
+      @media screen and (max-width: 414px) {
+        margin-right: 1rem;
+      }
     }
   }
   &__sortby {
@@ -64,6 +74,26 @@
     margin: 0 2rem;
     font-size: 1.3rem;
     z-index: 10;
+    @media screen and (max-width: 1024px) {
+      height: 42rem;
+    }
+    @media screen and (max-width: 768px) {
+      height: 54rem;
+    }
+    @media screen and (max-width: 667px) {
+      padding: 2rem 3rem;
+    }
+    @media screen and (max-width: 568px) {
+      padding: 2rem 0rem;
+      font-size: 1.2rem;
+    }
+    @media screen and (max-width: 414px) {
+      padding: 2rem 2rem;
+      height: 76rem;
+    }
+    @media screen and (max-width: 414px) {
+      padding: 2rem 0;
+    }
   }
   &__checkboxes {
     label {
@@ -110,6 +140,13 @@
   &__container {
     font-size: 1.5rem;
     color: #806d6d;
+    @media screen and (max-width: 667px) {
+      color: #4b4b4b;
+      margin-bottom: 1rem;
+    }
+    @media screen and (max-width: 414px) {
+      font-size: 1.3rem;
+    }
   }
   &__select {
     border: none;
@@ -119,6 +156,9 @@
     padding: 0 1.5rem;
     &:focus {
       outline: none;
+    }
+    @media screen and (max-width: 414px) {
+      font-size: 1.3rem;
     }
   }
 }

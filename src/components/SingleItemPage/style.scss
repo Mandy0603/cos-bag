@@ -43,7 +43,7 @@
         text-align: center;
         padding: 1rem 4rem;
         margin: 3rem auto;
-        width: auto;
+        width: 45%;
         font-size: 2rem;
         background-color: #f58e88;
         color: #fff;
@@ -54,6 +54,13 @@
         }
         @media screen and (max-width: 1100px) {
           padding: 1rem 2rem;
+        }
+        @media screen and (max-width: 980px) {
+          font-size: 1.5rem;
+        }
+        @media screen and (max-width: 925px) {
+          font-size: 1.3rem;
+          padding: 1rem 1rem;
         }
       }
       &-addToWishlist {

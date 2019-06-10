@@ -9,6 +9,9 @@ class Products extends React.Component {
       return (
         <li className="navbar__hidden-item" key={sub.toString()}>
           <Link
+            onClick={() => {
+              this.props.onSomethingSelected();
+            }}
             to={`/shop/${productWithoutSpace}/${subWithoutSpace}`}
             className="navbar-headers"
           >
@@ -23,6 +26,7 @@ class Products extends React.Component {
       isArrowClicked: !isArrowClicked
     }));
   };
+
   render() {
     const { product, subcategory } = this.props;
     const productWithoutSpace = product.replace(/\s+/g, "");
@@ -40,6 +44,9 @@ class Products extends React.Component {
       <li className="navbar__item">
         <div className="navbar__itemAndArrow">
           <Link
+            onClick={() => {
+              this.props.onSomethingSelected();
+            }}
             to={`/shop/${productWithoutSpace}/all`}
             className="navbar__link"
           >

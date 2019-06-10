@@ -9,7 +9,7 @@ import ColorBlock from "../ColorBlock";
 class Product extends React.Component {
   renderColor = colors => {
     return colors.map(color => {
-      return <ColorBlock key={color.toString()} color={color} />;
+      return <ColorBlock color={color} />;
     });
   };
   onPurchaseClick = link => {

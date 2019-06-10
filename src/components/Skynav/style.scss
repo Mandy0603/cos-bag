@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   background-color: #fff;
-  padding: 0rem 2.5rem;
+  padding: 0rem 3rem;
   line-height: 7rem;
   display: flex;
   justify-content: space-between;
@@ -10,6 +10,9 @@
   text-align: center;
   border-bottom: 1px solid rgba(121, 117, 117, 0.2);
   z-index: 100;
+  @media screen and (max-width: 667px) {
+    line-height: 5rem;
+  }
 
   &__middle {
     position: absolute;
@@ -20,17 +23,42 @@
     font-size: 5rem;
     font-family: "Cookie", cursive;
     cursor: pointer;
+    @media screen and (max-width: 768px) {
+      font-size: 4rem;
+    }
+    @media screen and (max-width: 667px) {
+      font-size: 3.5rem;
+    }
+    @media screen and (max-width: 414px) {
+      font-size: 3rem;
+    }
+    @media screen and (max-width: 375px) {
+      font-size: 3rem;
+      width: 60%;
+    }
   }
   &__left {
     display: flex;
     font-size: 1.3rem;
     height: 100%;
-    width: 14rem;
+    // width: 14rem;
     justify-content: space-between;
-    @media screen and (max-width: 1024px) {
-      font-size: 1.5rem;
+    &.menu {
+      display: none;
+      @media screen and (max-width: 1030px) {
+        display: block;
+      }
+    }
+    @media screen and (max-width: 375px) {
+      font-size: 1.2rem;
     }
 
+    & > * {
+      margin-right: 4rem;
+      @media screen and (max-width: 375px) {
+        margin-right: 2.5rem;
+      }
+    }
     & > *:hover {
       color: #f58e88;
       cursor: pointer;
@@ -43,10 +71,15 @@
     height: 100%;
     &:not(:last-child) {
       margin-right: 4rem;
+      @media screen and (max-width: 375px) {
+        margin-right: 2.5rem;
+      }
     }
     cursor: pointer;
-    @media screen and (max-width: 1024px) {
-      font-size: 1.5rem;
+    &.account {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
     }
   }
 }
@@ -112,5 +145,10 @@
   &:hover {
     color: #f58e88;
     cursor: pointer;
+  }
+}
+.map-marker {
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }

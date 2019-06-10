@@ -1,9 +1,14 @@
 .filter-result {
-  display: flex;
   padding: 0.5rem 2rem;
   font-size: 1.5rem;
+  &__brand {
+    @media screen and (max-width: 414px) {
+      font-size: 1.3rem;
+    }
+  }
   &__number {
     width: 100%;
+    margin-top: 2rem;
     margin-right: 2rem;
   }
   &__content {

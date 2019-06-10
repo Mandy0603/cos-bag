@@ -22,9 +22,6 @@ class FilterResult extends React.Component {
   render() {
     return (
       <div className="filter-result">
-        <div className="filter-result__number">
-          Showing {this.calculateItems()} of {this.props.products.length} items
-        </div>
         <div className="filter-result__content">
           {this.props.brands.map(brand => {
             return (
@@ -65,6 +62,9 @@ class FilterResult extends React.Component {
               </div>
             );
           })}
+        </div>
+        <div className="filter-result__number">
+          Showing {this.calculateItems()} of {this.props.products.length} items
         </div>
       </div>
     );

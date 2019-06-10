@@ -3,6 +3,9 @@
   @media screen and (max-width: 1024px) {
     padding: 5rem 5rem;
   }
+  @media screen and (max-width: 414px) {
+    padding: 3rem 4rem;
+  }
 
   img {
     margin: 2rem 0;
@@ -19,9 +22,15 @@
       width: 3rem;
       border-bottom: 1px solid;
       content: "";
+      @media screen and (max-width: 768px) {
+        margin: 2rem 0;
+      }
     }
     @media screen and (max-width: 1200px) {
       font-size: 2.5rem;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
     }
   }
   .cosmetic-text {
@@ -35,6 +44,17 @@
       float: left;
       @media screen and (max-width: 1200px) {
         font-size: 1.4rem;
+      }
+      @media screen and (max-width: 850px) {
+        font-size: 1.2rem;
+        width: 70%;
+      }
+      @media screen and (max-width: 667px) {
+        margin-bottom: 3rem;
+      }
+      @media screen and (max-width: 414px) {
+        width: 100%;
+        margin-bottom: 1rem;
       }
     }
     @media screen and (max-width: 1250px) {
@@ -57,6 +77,21 @@
     @media screen and (max-width: 1024px) {
       top: 22rem;
     }
+    @media screen and (max-width: 850px) {
+      font-size: 1.2rem;
+    }
+    @media screen and (max-width: 667px) {
+      top: 13rem;
+      right: 2rem;
+    }
+    @media screen and (max-width: 568px) {
+      font-size: 1.1rem;
+    }
+    @media screen and (max-width: 414px) {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
 
     & span {
       margin-left: 3px;
@@ -78,10 +113,25 @@
   &__double {
     display: flex;
     margin: 0 3rem;
+    @media screen and (max-width: 667px) {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media screen and (max-width: 414px) {
+      margin: 0;
+    }
 
     &-1 {
       width: 50%;
       margin-right: 8%;
+
+      @media screen and (max-width: 667px) {
+        width: 100%;
+      }
+      @media screen and (max-width: 414px) {
+        padding: 0 0 2rem 0;
+        border-bottom: 0.1px solid rgb(161, 161, 161);
+      }
 
       img {
         width: 95%;
@@ -90,27 +140,54 @@
     &-2 {
       width: 50%;
       padding: 0 0 0 9rem;
+      position: relative;
       @media screen and (max-width: 1024px) {
         padding: 0 0 0 5rem;
+      }
+      @media screen and (max-width: 667px) {
+        width: 100%;
+        padding: 3rem 0;
+      }
+      @media screen and (max-width: 414px) {
+        padding: 2rem 0;
+        padding: 2rem 0 2rem 0;
+        border-bottom: 0.1px solid rgb(161, 161, 161);
       }
       img {
         width: 95%;
         float: right;
+        @media screen and (max-width: 667px) {
+          padding: 0rem 2rem;
+          width: 80%;
+        }
       }
       #description-2 {
         width: 100%;
         @media screen and (max-width: 1200px) {
           font-size: 1.4rem;
         }
+        @media screen and (max-width: 850px) {
+          font-size: 1.3rem;
+        }
+        @media screen and (max-width: 667px) {
+          margin-bottom: 0;
+          font-size: 1.2rem;
+        }
       }
       #story2-h2 {
         width: 30%;
         float: left;
+        @media screen and (max-width: 414px) {
+          width: 100%;
+        }
       }
       #story2-link {
         position: absolute;
         top: 2rem;
         right: 2rem;
+        @media screen and (max-width: 375px) {
+          top: 4rem;
+        }
       }
       #story2-linkbox {
         position: relative;
@@ -126,13 +203,35 @@
     @media screen and (max-width: 1024px) {
       padding: 2rem 6rem 2rem 10rem;
     }
+    @media screen and (max-width: 768px) {
+      padding: 2rem 4rem 2rem 6rem;
+    }
+    @media screen and (max-width: 667px) {
+      padding: 3rem 0;
+    }
+    @media screen and (max-width: 414px) {
+      padding: 0rem 0;
+      margin: 0;
+    }
 
     &-1 {
       display: flex;
+      @media screen and (max-width: 414px) {
+        display: block;
+      }
 
       img {
         width: 80%;
         margin-right: 4rem;
+        @media screen and (max-width: 414px) {
+          display: inline-block;
+          width: 70%;
+        }
+      }
+      h2 {
+        @media screen and (max-width: 568px) {
+          font-size: 1.5rem;
+        }
       }
 
       #description-3 {
@@ -140,6 +239,15 @@
         margin-top: 1rem;
         @media screen and (max-width: 1200px) {
           font-size: 1.4rem;
+        }
+        @media screen and (max-width: 850px) {
+          font-size: 1.3rem;
+        }
+        @media screen and (max-width: 667px) {
+          font-size: 1.2rem;
+        }
+        @media screen and (max-width: 414px) {
+          margin-top: 0;
         }
       }
       #story3-link {
@@ -149,11 +257,24 @@
         @media screen and (max-width: 1250px) {
           top: 36rem;
         }
+        @media screen and (max-width: 667px) {
+          top: 33rem;
+        }
+        @media screen and (max-width: 414px) {
+          position: relative;
+          top: 0;
+        }
       }
       .cosmetic-text {
         padding: 6rem 3rem;
         @media screen and (max-width: 1250px) {
           padding: 4rem 2rem;
+        }
+        @media screen and (max-width: 667px) {
+          padding: 3rem 0rem;
+        }
+        @media screen and (max-width: 414px) {
+          padding: 1rem 0;
         }
       }
     }

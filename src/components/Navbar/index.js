@@ -1,34 +1,56 @@
 import React from "react";
+import { connect } from "react-redux";
+import { updateMenuClassName } from "../../services/Menu/actions";
 import "./style.scss";
 import Products from "./Products";
 
 class Navbar extends React.Component {
-  state = { isCloseButtonClicked: false };
-  toggleCloseButton = () => {
-    this.setState(({ isCloseButtonClicked }) => ({
-      isCloseButtonClicked: !isCloseButtonClicked
-    }));
+  onCloseButtonClick = () => {
+    this.props.updateMenuClassName("navbar__main navbar__main-closed");
   };
-  onCloseButtonClick = () => {};
+  onMenuBlur = () => {
+    this.props.updateMenuClassName("navbar__main navbar__main-closed");
+  };
 
   render() {
-    let listClassName;
-
     return (
-      <div className="navbar__main">
+      <div
+        className={
+          this.props.menuClassName || "navbar__main navbar__main-closed"
+        }
+        tabindex="1"
+        onBlur={() => {
+          this.onMenuBlur();
+        }}
+      >
         <ul className="navbar__list">
-          <Products product={"Blush"} subcategory={["Powder", "Cream"]} />
-          <Products product={"Bronzer"} subcategory={["Powder"]} />
-          <Products product={"Eyebrow"} subcategory={["Pencil"]} />
           <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
+            product={"Blush"}
+            subcategory={["Powder", "Cream"]}
+          />
+          <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
+            product={"Bronzer"}
+            subcategory={["Powder"]}
+          />
+          <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
+            product={"Eyebrow"}
+            subcategory={["Pencil"]}
+          />
+          <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
             product={"Eyeliner"}
             subcategory={["Liquid", "Pencil", "Gel", "Cream"]}
           />
           <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
             product={"Eyeshadow"}
             subcategory={["Palette", "Pencil", "Cream"]}
           />
           <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
             product={"Foundation"}
             subcategory={[
               "Liquid",
@@ -41,13 +63,26 @@ class Navbar extends React.Component {
               "Highlighter"
             ]}
           />
-          <Products product={"Lip Liner"} subcategory={["Pencil"]} />
           <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
+            product={"Lip Liner"}
+            subcategory={["Pencil"]}
+          />
+          <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
             product={"Lipstick"}
             subcategory={["Lipstick", "Lip Gloss", "Liquid", "Lip Stain"]}
           />
-          <Products product={"Mascara"} subcategory={[""]} />
-          <Products product={"Nail Polish"} subcategory={[""]} />
+          <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
+            product={"Mascara"}
+            subcategory={[""]}
+          />
+          <Products
+            onSomethingSelected={() => this.onCloseButtonClick()}
+            product={"Nail Polish"}
+            subcategory={[""]}
+          />
         </ul>
         <div
           className="navbar__close"
@@ -61,5 +96,11 @@ class Navbar extends React.Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return { menuClassName: state.menu };
+};
 
-export default Navbar;
+export default connect(
+  mapStateToProps,
+  { updateMenuClassName }
+)(Navbar);

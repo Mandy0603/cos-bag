@@ -5,6 +5,9 @@
   flex-direction: column;
   padding: 5rem 4rem 2rem 4rem;
 
+  @media screen and (max-width: 414px) {
+    padding: 5rem 3rem 2rem 5rem;
+  }
   .footer-brand {
     width: 100%;
     display: flex;
@@ -13,14 +16,24 @@
     margin-bottom: 6rem;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0.5px;
+    @media screen and (max-width: 414px) {
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
     &__name {
       font-size: 3rem;
       font-weight: 100;
+      @media screen and (max-width: 414px) {
+        margin-bottom: 1rem;
+      }
     }
     &__contact {
       font-family: "Courgette", cursive;
       font-size: 1.5rem;
       display: flex;
+      @media screen and (max-width: 414px) {
+        font-size: 1.2rem;
+      }
       i {
         margin-left: 1.5rem;
         &:hover {
@@ -36,6 +49,18 @@
     padding: 2rem auto;
     display: flex;
     justify-content: space-evenly;
+    @media screen and (max-width: 414px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    h3 {
+      @media screen and (max-width: 667px) {
+        font-size: 1.5rem;
+      }
+      @media screen and (max-width: 667px) {
+        font-size: 1.3rem;
+      }
+    }
 
     ul {
       list-style: none;
@@ -46,6 +71,9 @@
       li {
         padding: 0.5rem 0;
         font-size: 1.3rem;
+        @media screen and (max-width: 667px) {
+          font-size: 1.1rem;
+        }
 
         &:hover {
           text-decoration: underline;
@@ -63,5 +91,8 @@
     padding: 1em 0;
     text-align: right;
     font-size: 1rem;
+    @media screen and (max-width: 667px) {
+      text-align: center;
+    }
   }
 }
