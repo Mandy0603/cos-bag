@@ -10,7 +10,7 @@
       display: flex;
       border-bottom: 1px solid rgba(121, 117, 117, 0.2);
 
-      @media screen and (max-width: 1030px) {
+      @media screen and (max-width: 1024px) {
         display: none;
       }
     }
@@ -24,7 +24,7 @@
         line-height: 3rem;
         padding: 2rem 1.5rem;
       }
-      @media screen and (max-width: 1030px) {
+      @media screen and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -37,11 +37,15 @@
         // height: 100rem;
         z-index: 90;
       }
+      @media screen and (max-width: 667px) {
+        width: 100%;
+        padding: 1.5rem 0;
+      }
     }
   }
   &__close {
     display: none;
-    @media screen and (max-width: 1030px) {
+    @media screen and (max-width: 1024px) {
       display: block;
       position: absolute;
       top: 0;
@@ -55,12 +59,24 @@
         color: #f58e88;
         background-color: #181818f6;
       }
+      @media screen and (max-width: 667px) {
+        background-color: transparent;
+        left: 93%;
+
+        padding: 1.5rem 1.3rem;
+      }
+      @media screen and (max-width: 568px) {
+        left: 92%;
+      }
+      @media screen and (max-width: 414px) {
+        left: 87%;
+      }
     }
   }
   &__list {
     margin: 0 auto;
-    @media screen and (max-width: 1030px) {
-      padding: 2rem 0 0 2.5rem;
+    @media screen and (max-width: 1024px) {
+      padding: 2.5rem 3rem 2.5rem 2.5rem;
     }
   }
   &__item {
@@ -71,7 +87,7 @@
     @media screen and (max-width: 1200px) {
       padding-right: 3.5rem;
     }
-    @media screen and (max-width: 1030px) {
+    @media screen and (max-width: 1024px) {
       width: 100%;
       padding: 1rem 1.5rem 1rem 0;
       font-size: 1.8rem;
@@ -79,7 +95,7 @@
 
     &:hover .navbar__hidden {
       display: block;
-      @media screen and (max-width: 1030px) {
+      @media screen and (max-width: 1024px) {
         display: none;
       }
     }
@@ -91,7 +107,7 @@
   }
   &__arrow {
     display: none;
-    @media screen and (max-width: 1030px) {
+    @media screen and (max-width: 1024px) {
       display: inline-block;
     }
   }
@@ -104,7 +120,7 @@
     color: #181818;
     transition: all 0.5s;
 
-    @media screen and (max-width: 1030px) {
+    @media screen and (max-width: 1024px) {
       color: rgb(206, 206, 206);
     }
 
@@ -125,11 +141,11 @@
     text-align: center;
     .navbar-headers {
       color: #181818;
-      @media screen and (max-width: 1030px) {
+      @media screen and (max-width: 1024px) {
         color: rgb(206, 206, 206);
       }
     }
-    @media screen and (max-width: 1030px) {
+    @media screen and (max-width: 1024px) {
       &-open {
         display: block !important;
         position: relative;
@@ -140,5 +156,19 @@
         padding-left: 2rem;
       }
     }
+  }
+}
+.skynavComponents {
+  @media screen and (min-width: 1025px) {
+    display: none;
+  }
+  margin-top: 3rem;
+  font-size: 1.8rem;
+
+  &__location {
+    margin-top: 3rem;
+  }
+  &__account {
+    display: flex;
   }
 }

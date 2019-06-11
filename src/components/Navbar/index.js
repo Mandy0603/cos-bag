@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import history from "../../services/history";
 import { updateMenuClassName } from "../../services/Menu/actions";
 import "./style.scss";
 import Products from "./Products";
@@ -11,7 +12,32 @@ class Navbar extends React.Component {
   onMenuBlur = () => {
     this.props.updateMenuClassName("navbar__main navbar__main-closed");
   };
-
+  renderAccount = () => {
+    if (this.props.loggedIn) {
+      return (
+        <div className="user-admin">
+          <div
+            className="welcome"
+            onClick={() => history.push("/customers/userInfo")}
+          >
+            {this.props.userEmail}
+          </div>
+          <button className="sign-out" onClick={this.onSignOut}>
+            Sign Out
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div
+          className="user-account"
+          onClick={() => history.push("/customers/myaccount")}
+        >
+          My Account
+        </div>
+      );
+    }
+  };
   render() {
     return (
       <div
@@ -83,6 +109,25 @@ class Navbar extends React.Component {
             product={"Nail Polish"}
             subcategory={[""]}
           />
+          <div className="skynavComponents">
+            <div
+              onClick={() => {
+                history.push("/storelocation");
+                this.onCloseButtonClick();
+              }}
+              className=" navbar__item skynavComponents__location"
+            >
+              <i className="map marker alternate icon" />
+              Locate store
+            </div>
+            <div
+              onClick={() => this.onCloseButtonClick()}
+              className="navbar__item skynavComponents__account"
+            >
+              <i className="user outline icon" />
+              {this.renderAccount()}
+            </div>
+          </div>
         </ul>
         <div
           className="navbar__close"
@@ -97,7 +142,11 @@ class Navbar extends React.Component {
   }
 }
 const mapStateToProps = state => {
-  return { menuClassName: state.menu };
+  return {
+    menuClassName: state.menu,
+    loggedIn: state.user.isLoggedIn,
+    userEmail: state.user.user
+  };
 };
 
 export default connect(

@@ -8,6 +8,7 @@ import totalReducer from "./Total/reducer";
 import wishlistTotalReducer from "./WishlistTotal/reducer";
 import singleItemReducer from "./Item/reducer";
 import menuReducer from "./Menu/reducer";
+import userReducer from "./User/reducer";
 
 export default combineReducers({
   filter: filterReducer,
@@ -18,5 +19,6 @@ export default combineReducers({
   total: totalReducer,
   wishlistTotal: wishlistTotalReducer,
   item: singleItemReducer,
-  menu: menuReducer
+  menu: menuReducer,
+  user: userReducer
 });

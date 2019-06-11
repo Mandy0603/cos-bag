@@ -8,6 +8,10 @@
     h2 {
       font-size: 3rem;
       margin: 2rem 0;
+      @media screen and (max-width: 768px) {
+        font-size: 2rem;
+        margin: 1.5rem 0;
+      }
     }
   }
   &__products {
@@ -17,13 +21,31 @@
 }
 .list-empty {
   padding: 10rem 16rem;
+  @media screen and (max-width: 568px) {
+    padding: 8rem 12rem;
+  }
+  @media screen and (max-width: 414px) {
+    padding: 4rem 6rem;
+  }
   &__title {
     font-size: 3rem;
     margin-bottom: 3rem;
+    @media screen and (max-width: 568px) {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    @media screen and (max-width: 414px) {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
   }
   &__paragraph {
     padding: 2rem 0 1rem 0;
     font-size: 2rem;
+    @media screen and (max-width: 414px) {
+      padding: 1rem 0 0.5rem 0;
+      font-size: 1.5rem;
+    }
   }
   &__ad {
     text-decoration: underline;
@@ -31,18 +53,8 @@
     cursor: pointer;
     font-size: 1.5rem;
     color: #f58e88;
+    @media screen and (max-width: 414px) {
+      font-size: 1.3rem;
+    }
   }
 }
-
-// /* MAC scrollbar para desktop*/
-// @media screen and (min-width: 640px) {
-//   .float-cart__content::-webkit-scrollbar {
-//     -webkit-appearance: none;
-//     width: 10px;
-//     background-color: rgba(0, 0, 0, 0.2);
-//     padding: 10px;
-//   }
-//   .float-cart__content::-webkit-scrollbar-thumb {
-//     border-radius: 4px;
-//     background-color: #0c0b10;
-//   }

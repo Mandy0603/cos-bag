@@ -73,7 +73,7 @@ class SingleItemPage extends React.Component {
                 }}
               />
             </div>
-            <div>
+            <div className="purchaseAndWishlist">
               <button
                 onClick={() => this.onAddToBagClick()}
                 className="item__description-admin-addToBag"

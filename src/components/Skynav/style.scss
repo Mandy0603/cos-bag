@@ -10,9 +10,6 @@
   text-align: center;
   border-bottom: 1px solid rgba(121, 117, 117, 0.2);
   z-index: 100;
-  @media screen and (max-width: 667px) {
-    line-height: 5rem;
-  }
 
   &__middle {
     position: absolute;
@@ -98,6 +95,10 @@
     right: 0;
     opacity: 0;
     visibility: hidden;
+    @media screen and (max-width: 1023px) {
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
   }
   &__display {
     &:hover {
@@ -121,6 +122,10 @@
     right: 0;
     opacity: 0;
     visibility: hidden;
+    @media screen and (max-width: 1023px) {
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
   }
   &__display {
     &:hover {
