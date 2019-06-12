@@ -1,5 +1,12 @@
 .color-selector {
   display: flex;
+  width: 50%;
+  justify-content: end;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
   &__title {
     margin-right: 1rem;
   }

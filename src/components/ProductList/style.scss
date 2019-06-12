@@ -127,7 +127,7 @@
         width: 45%;
         border-radius: 5px;
       }
-      @media screen and (max-width: 736px) {
+      @media screen and (max-width: 768px) {
         padding: 0;
       }
 
@@ -139,7 +139,7 @@
     &-buy {
       background-color: pink;
     }
-    &-cart {
+    &-viewDetails {
       background-color: yellow;
     }
   }

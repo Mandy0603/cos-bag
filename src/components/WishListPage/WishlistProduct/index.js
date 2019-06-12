@@ -1,9 +1,14 @@
 import React from "react";
+import AdminButtons from "../../ProductList/AdminButtons";
 import "./style.scss";
 
 class WishlistProduct extends React.Component {
   render() {
     const { product } = this.props;
+    let nameModified = product.name
+      .replace("#", "-")
+      .split(" ")
+      .join("_");
     return (
       <div className="wishlist-item">
         <div className="wishlist-item__image">
@@ -22,6 +27,12 @@ class WishlistProduct extends React.Component {
             product.price
           }`}</p>
         </div>
+        <AdminButtons
+          product_link={product.product_link}
+          product_type={product.product_type}
+          nameModified={nameModified}
+          id={product.id}
+        />
       </div>
     );
   }

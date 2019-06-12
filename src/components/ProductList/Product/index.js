@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import history from "../../../services/history";
-import { addProduct } from "../../../services/Cart/actions";
+import AdminButtons from "../AdminButtons";
+
 import { addToWishlist } from "../../../services/Wishlist/actions";
 import Checkbox from "./Checkbox";
 import ColorBlock from "../ColorBlock";
@@ -15,10 +16,6 @@ class Product extends React.Component {
   onPurchaseClick = link => {
     window.open(link, "_blank");
   };
-  onAddToCartClick = product => {
-    product.quantity = 1;
-    this.props.addProduct(product);
-  };
 
   render() {
     const {
@@ -31,7 +28,6 @@ class Product extends React.Component {
       product_type,
       id
     } = this.props.product;
-
     let nameModified = name.replace("#", "-");
     nameModified = nameModified.split(" ").join("_");
 
@@ -71,23 +67,12 @@ class Product extends React.Component {
             </div>
           </div>
         </div>
-
-        <div className="product__purchase">
-          <button
-            onClick={() => {
-              this.onPurchaseClick(product_link);
-            }}
-            className="product__purchase-buy"
-          >
-            Buy Now
-          </button>
-          <button
-            onClick={() => this.onAddToCartClick(this.props.product)}
-            className="product__purchase-cart"
-          >
-            Add to Cart
-          </button>
-        </div>
+        <AdminButtons
+          product_link={product_link}
+          product_type={product_type}
+          nameModified={nameModified}
+          id={id}
+        />
       </div>
     );
   }
@@ -95,5 +80,5 @@ class Product extends React.Component {
 
 export default connect(
   null,
-  { addProduct, addToWishlist }
+  { addToWishlist }
 )(Product);

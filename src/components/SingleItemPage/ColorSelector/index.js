@@ -3,6 +3,9 @@ import "./style.scss";
 
 class ColorSelector extends React.Component {
   renderOptions = colors => {
+    if (colors.length === 0) {
+      return <option>Default</option>;
+    }
     return colors.map(color => {
       return <option value={color.colour_name}>{color.colour_name}</option>;
     });

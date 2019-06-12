@@ -38,18 +38,22 @@
       flex-direction: column;
 
       .brand {
-        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-size: 1.5rem;
         font-weight: 600;
       }
       .name {
-        font-size: 1.5rem;
+        font-size: 2rem;
+      }
+      .selectedColor {
+        font-size: 1.4rem;
+        margin-top: 3rem;
       }
       .quantity {
-        margin-top: auto;
         font-size: 1.4rem;
       }
       .price {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
     }
   }

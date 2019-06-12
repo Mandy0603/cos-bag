@@ -4,6 +4,7 @@ import { fetchItem } from "../../services/Item/actions";
 import { addProduct } from "../../services/Cart/actions";
 import { addToWishlist } from "../../services/Wishlist/actions";
 import QuantitySelector from "./QuantitySelector";
+import ColorSelector from "./ColorSelector";
 import Modal from "../Modal";
 
 import "./style.scss";
@@ -14,6 +15,9 @@ class SingleItemPage extends React.Component {
     quantity: 1,
     color: null
   };
+  onSelectionChange = color => {
+    this.setState({ color: color });
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -21,6 +25,7 @@ class SingleItemPage extends React.Component {
     const { id } = this.props.match.params;
     this.props.fetchItem(id, () => this.setState({ isLoading: false }));
   }
+
   renderColors = colors => {
     return colors.map(color => {
       return (
@@ -36,6 +41,7 @@ class SingleItemPage extends React.Component {
       );
     });
   };
+
   renderItem = () => {
     const {
       image_link,
@@ -72,6 +78,10 @@ class SingleItemPage extends React.Component {
                   this.setState({ quantity: quantity });
                 }}
               />
+              <ColorSelector
+                onSelectionChange={this.onSelectionChange}
+                colors={product_colors}
+              />
             </div>
             <div className="purchaseAndWishlist">
               <button
@@ -93,7 +103,33 @@ class SingleItemPage extends React.Component {
     );
   };
   onAddToBagClick = () => {
-    this.props.item.quantity = this.state.quantity;
+    if (!this.state.color) {
+      return;
+    }
+    const stateColor = this.state.color;
+    const stateQuantity = this.state.quantity;
+
+    if (this.props.item.color) {
+      let flag = false;
+      this.props.item.color.map(color => {
+        if (Object.keys(color) == stateColor) {
+          color[Object.keys(color)] += stateQuantity;
+          flag = true;
+          console.log(color);
+        }
+      });
+      if (!flag) {
+        this.props.item.color.push({ [stateColor]: stateQuantity });
+      }
+      console.log(this.props.item.color);
+      this.props.item.quantity += stateQuantity;
+      console.log(this.props.item.quantity);
+    } else {
+      this.props.item.color = Array({ [stateColor]: stateQuantity });
+      this.props.item.quantity = stateQuantity;
+      console.log(this.props.item);
+    }
+
     this.props.addProduct(this.props.item);
   };
   onAddToWishlistClick = () => {

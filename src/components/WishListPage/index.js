@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AdminButtons from "../ProductList/AdminButtons";
 
 import { connect } from "react-redux";
 import history from "../../services/history";
@@ -9,6 +10,9 @@ import WishlistProduct from "./WishlistProduct";
 import "./style.scss";
 
 class WishListPage extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     const { listProducts, removeFromWishlist } = this.props;
 

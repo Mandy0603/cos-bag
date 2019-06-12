@@ -70,7 +70,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        @media screen and (max-width: 1024px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
       &-addToBag,
       &-addToWishlist {

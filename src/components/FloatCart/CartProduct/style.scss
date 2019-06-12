@@ -16,6 +16,7 @@
     justify-content: space-around;
     text-align: left;
     position: relative;
+    margin-left: 2rem;
     &-del {
       position: absolute;
       top: 0;
@@ -39,9 +40,13 @@
       .name {
         font-size: 1.5rem;
       }
-      .quantity {
+      .selectedColor {
         margin-top: auto;
         font-size: 1.4rem;
+      }
+      .quantity {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
       }
       .price {
         font-size: 1.5rem;

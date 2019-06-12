@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+index.html
+src/components/StoreLocation/index.js
+src/components/Skynav/index.js
 
 # testing
 /coverage

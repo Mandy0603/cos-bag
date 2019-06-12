@@ -11,6 +11,7 @@ import "./style.scss";
 
 class FloatCart extends Component {
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
     if (nextProps.newProduct !== this.props.newProduct) {
       this.addProduct(nextProps.newProduct);
     }
@@ -26,7 +27,7 @@ class FloatCart extends Component {
 
     cartProducts.forEach(cp => {
       if (cp.id === product.id) {
-        cp.quantity += product.quantity;
+        cp.quantity = product.quantity;
         productAlreadyInCart = true;
       }
     });
@@ -63,7 +64,6 @@ class FloatCart extends Component {
 
     return (
       <div className="float-cart">
-        {/* <div className="float-cart__shelf-container"> */}
         {!!products.length && (
           <div className="shelf-container">
             <div className="shelf-container__products">{products}</div>
@@ -91,7 +91,6 @@ class FloatCart extends Component {
           </div>
         )}
       </div>
-      // </div>
     );
   }
 }
