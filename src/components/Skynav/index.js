@@ -11,13 +11,13 @@ import "./style.scss";
 class Skynav extends React.Component {
   componentWillMount() {
     firebase.initializeApp({
-      apiKey: "AIzaSyBAYIcLo5cduX0r5u-mcs0I9arYEpokX2E",
-      authDomain: "cos-bag.firebaseapp.com",
-      databaseURL: "https://cos-bag.firebaseio.com",
-      projectId: "cos-bag",
-      storageBucket: "cos-bag.appspot.com",
-      messagingSenderId: "897734427465",
-      appId: "1:897734427465:web:4463dd7000015c46"
+      apiKey: "****",
+      authDomain: "*****",
+      databaseURL: "*****",
+      projectId: "*****",
+      storageBucket: "*****",
+      messagingSenderId: "******",
+      appId: "****"
     });
 
     firebase.auth().onAuthStateChanged(user => {
