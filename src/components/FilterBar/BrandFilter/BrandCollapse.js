@@ -64,13 +64,7 @@ const brand = [
 
 class BrandCollapse extends React.Component {
   render() {
-    return (
-      <FilterCollapse
-        filterItems={brand}
-        filterType="brands"
-        updateFilter={this.props.updateBrandFilters}
-      />
-    );
+    return <FilterCollapse filterItems={brand} filterType="brands" />;
   }
 }
 
