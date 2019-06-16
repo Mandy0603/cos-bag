@@ -23,9 +23,10 @@ class WishlistProduct extends React.Component {
         <div className="wishlist-item__text">
           <p className="brand">{product.brand}</p>
           <p className="name">{product.name}</p>
-          <p className="price">{`${product.price_sign || "$"}  ${
-            product.price
-          }`}</p>
+          <p className="price">
+            {"$"}
+            {product.price}
+          </p>
         </div>
         <AdminButtons
           product_link={product.product_link}
