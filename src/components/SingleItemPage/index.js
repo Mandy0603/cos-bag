@@ -109,28 +109,52 @@ class SingleItemPage extends React.Component {
     const stateColor = this.state.color;
     const stateQuantity = this.state.quantity;
 
-    if (this.props.item.color) {
+    const index = this.props.cartProducts.findIndex(
+      product => product.id === this.props.item.id
+    );
+    if (index >= 0) {
       let flag = false;
-      this.props.item.color.map(color => {
-        if (Object.keys(color) == stateColor) {
-          color[Object.keys(color)] += stateQuantity;
+      this.props.cartProducts[index].color.map(color => {
+        if (color.name === stateColor) {
+          color.quantity += stateQuantity;
           flag = true;
-          console.log(color);
         }
       });
       if (!flag) {
-        this.props.item.color.push({ [stateColor]: stateQuantity });
+        this.props.cartProducts[index].color.push({
+          name: stateColor,
+          quantity: stateQuantity
+        });
       }
-      console.log(this.props.item.color);
-      this.props.item.quantity += stateQuantity;
-      console.log(this.props.item.quantity);
     } else {
-      this.props.item.color = Array({ [stateColor]: stateQuantity });
-      this.props.item.quantity = stateQuantity;
-      console.log(this.props.item);
+      this.props.item.color = Array({
+        name: stateColor,
+        quantity: stateQuantity
+      });
     }
-
     this.props.addProduct(this.props.item);
+
+    // if (this.props.item.color) {
+    //   let flag = false;
+    //   this.props.item.color.map(color => {
+    //     if (color.name === stateColor) {
+    //       color.quantity += stateQuantity;
+    //       flag = true;
+    //     }
+    //   });
+    //   if (!flag) {
+    //     this.props.item.color.push({
+    //       name: stateColor,
+    //       quantity: stateQuantity
+    //     });
+    //   }
+    // } else {
+    //   this.props.item.color = Array({
+    //     name: stateColor,
+    //     quantity: stateQuantity
+    //   });
+    // }
+    // this.props.addProduct(this.props.item);
   };
   onAddToWishlistClick = () => {
     this.props.addToWishlist(this.props.item);
@@ -149,7 +173,7 @@ class SingleItemPage extends React.Component {
   }
 }
 const mapStateToProps = state => {
-  return { item: state.item };
+  return { item: state.item, cartProducts: state.cart.products };
 };
 
 export default connect(

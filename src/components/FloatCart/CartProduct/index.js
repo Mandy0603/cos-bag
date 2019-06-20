@@ -25,9 +25,9 @@ class CartProduct extends Component {
       product.color = Array();
     }
 
-    return product.color.map(color => {
+    return product.color.map((color, i) => {
       return (
-        <div className={classes.join(" ")}>
+        <div key={i} className={classes.join(" ")}>
           <div className="shelf-item__thumb">
             <img src={product.image_link} alt={product.name} />
           </div>
@@ -36,7 +36,7 @@ class CartProduct extends Component {
               className="shelf-item__text-del"
               onMouseOver={() => this.handleMouseOver()}
               onMouseOut={() => this.handleMouseOut()}
-              onClick={() => removeProduct(product)}
+              onClick={() => removeProduct(product, color)}
             >
               X
             </div>
@@ -44,8 +44,8 @@ class CartProduct extends Component {
             <div className="shelf-item__text-details">
               <p className="brand">{product.brand}</p>
               <p className="name">{product.name}</p>
-              <p className="selectedColor">Color: {Object.keys(color)}</p>
-              <p className="quantity">Quantity: {color[Object.keys(color)]}</p>
+              <p className="selectedColor">Color: {color.name}</p>
+              <p className="quantity">Quantity: {color.quantity}</p>
               <p className="price">{`${product.price_sign || "$"}  ${
                 product.price
               }`}</p>

@@ -13,9 +13,6 @@ class Product extends React.Component {
       return <ColorBlock color={color} />;
     });
   };
-  onPurchaseClick = link => {
-    window.open(link, "_blank");
-  };
 
   render() {
     const {

@@ -11,7 +11,6 @@ import "./style.scss";
 
 class FloatCart extends Component {
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     if (nextProps.newProduct !== this.props.newProduct) {
       this.addProduct(nextProps.newProduct);
     }
@@ -39,12 +38,23 @@ class FloatCart extends Component {
     updateCart(cartProducts);
   };
 
-  removeProduct = product => {
+  removeProduct = productToRemove => {
+    const { product, color } = productToRemove;
     const { cartProducts, updateCart } = this.props;
-
     const index = cartProducts.findIndex(p => p.id === product.id);
-    if (index >= 0) {
-      cartProducts.splice(index, 1);
+    const indexColor = cartProducts.findIndex(
+      p => p.id === product.id && p.color.length === 1 && p.color[0] === color
+    );
+
+    if (indexColor >= 0) {
+      cartProducts.splice(indexColor, 1);
+      updateCart(cartProducts);
+    } else if (index >= 0) {
+      const productColorIndex = cartProducts[index].color.findIndex(
+        c => c.name === color.name
+      );
+      cartProducts[index].color.splice(productColorIndex, 1);
+
       updateCart(cartProducts);
     }
   };
@@ -56,10 +66,8 @@ class FloatCart extends Component {
   render() {
     const { cartTotal, cartProducts, removeProduct } = this.props;
 
-    const products = cartProducts.map(p => {
-      return (
-        <CartProduct product={p} removeProduct={removeProduct} key={p.id} />
-      );
+    const products = cartProducts.map((p, i) => {
+      return <CartProduct product={p} removeProduct={removeProduct} key={i} />;
     });
 
     return (

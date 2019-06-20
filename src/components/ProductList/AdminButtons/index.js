@@ -2,6 +2,10 @@ import React from "react";
 import history from "../../../services/history";
 
 class AdminButtons extends React.Component {
+  onPurchaseClick = link => {
+    window.open(link, "_blank");
+  };
+
   render() {
     const { product_link, product_type, nameModified, id } = this.props;
 

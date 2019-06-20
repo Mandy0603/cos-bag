@@ -36,11 +36,17 @@ class ShoppingBag extends Component {
     });
 
     const orderSummary = cartProducts.map(p => {
+      let total = 0;
+      if (p.color) {
+        for (let i = 0; i < p.color.length; i++) {
+          total += p.color[i].quantity;
+        }
+      }
       return (
         <div className="bag-container__summary-items">
           <div className="details-name">{p.name}</div>
           <div className="details-calc">
-            <span className="quantity">Quantity: {p.quantity}</span>
+            <span className="quantity">Quantity:{total}</span>
             <span className="price">
               Unit Price: {"$"}
               {p.price}

@@ -16,7 +16,7 @@ class CartProduct extends Component {
           <div className="bag-item__text">
             <div
               className="bag-item__text-del"
-              onClick={() => removeProduct(product)}
+              onClick={() => removeProduct(product, color)}
             >
               X
             </div>
@@ -24,8 +24,8 @@ class CartProduct extends Component {
             <div className="bag-item__text-details">
               <p className="brand">{product.brand}</p>
               <p className="name">{product.name}</p>
-              <p className="selectedColor">Color: {Object.keys(color)}</p>
-              <p className="quantity">Quantity: {color[Object.keys(color)]}</p>
+              <p className="selectedColor">Color:{color.name}</p>
+              <p className="quantity">Quantity: {color.quantity}</p>
               <p className="price">{`${product.price_sign || "$"}  ${
                 product.price
               }`}</p>
