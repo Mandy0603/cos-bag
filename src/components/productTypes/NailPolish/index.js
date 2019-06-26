@@ -10,12 +10,6 @@ class NailPolish extends React.Component {
   render() {
     return (
       <div className="blush">
-        {/* <div className="blush__top">
-          <img
-            src={require("../../../static/img/carousel-1.jpg")}
-            alt="display"
-          />
-        </div> */}
         <ProductBreadcrumb
           category={"Nail Polish"}
           subcategory={this.props.match.params.subcategory}

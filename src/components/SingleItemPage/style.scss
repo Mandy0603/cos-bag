@@ -22,6 +22,11 @@
       padding: 4rem 2rem 0rem;
     }
   }
+  &__hint {
+    padding-top: 2rem;
+    color: red;
+    font-size: 1.5rem;
+  }
   &__image {
     width: 45%;
     height: auto;
@@ -61,7 +66,7 @@
       }
     }
     &-admin {
-      margin: 2rem 0;
+      margin: 1rem 0;
       @media screen and (max-width: 667px) {
         margin: 1rem 0;
       }
@@ -80,7 +85,7 @@
       &-addToWishlist {
         text-align: center;
         padding: 1rem 4rem;
-        margin: 3rem auto;
+        margin: 2rem auto;
         width: 45%;
         font-size: 2rem;
         background-color: #f58e88;

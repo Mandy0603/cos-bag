@@ -29,7 +29,7 @@ class Products extends React.Component {
 
   render() {
     const { product, subcategory } = this.props;
-    const productWithoutSpace = product.replace(/\s+/g, "");
+    const productWithoutSpace = product.replace(/\s+/g, "_");
     let iconClassName;
     let hiddenListClassName;
     if (this.state.isArrowClicked) {

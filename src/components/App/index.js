@@ -66,7 +66,7 @@ class App extends React.Component {
                 component={Foundation}
               />
               <Route
-                path="/shop/lipliner/:subcategory?/:pages?"
+                path="/shop/lip_liner/:subcategory?/:pages?"
                 exact
                 component={LipLiner}
               />
@@ -81,7 +81,7 @@ class App extends React.Component {
                 component={Mascara}
               />
               <Route
-                path="/shop/nailpolish/:subcategory?/:pages?"
+                path="/shop/nail_polish/:subcategory?/:pages?"
                 exact
                 component={NailPolish}
               />

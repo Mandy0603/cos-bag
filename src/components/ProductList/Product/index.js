@@ -37,7 +37,6 @@ class Product extends React.Component {
           className="product__image"
         >
           <img src={image_link} alt={name} />
-          <div className="product__image-details">View Details</div>
         </div>
         <div className="product__wish-list ">
           <Checkbox product={this.props.product} />

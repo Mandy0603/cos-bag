@@ -25,7 +25,7 @@ class WishlistProduct extends React.Component {
           <p className="name">{product.name}</p>
           <p className="price">
             {"$"}
-            {product.price}
+            {product.price || "0.0"}
           </p>
         </div>
         <AdminButtons

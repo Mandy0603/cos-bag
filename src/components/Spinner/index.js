@@ -3,9 +3,19 @@ import "./style.scss";
 
 const Spinner = () => {
   return (
-    <div className="lds-heart">
+    <div class="lds-spinner">
       <div />
-      <div className="modal" />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
     </div>
   );
 };

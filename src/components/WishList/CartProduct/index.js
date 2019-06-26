@@ -41,9 +41,8 @@ class CartProduct extends Component {
           <div className="list-item__text-details">
             <p className="brand">{product.brand}</p>
             <p className="name">{product.name}</p>
-            <p className="price">{`${product.price_sign || "$"}  ${
-              product.price
-            }`}</p>
+            <p className="price">{`${product.price_sign ||
+              "$"}  ${product.price || "0.0"}`}</p>
           </div>
         </div>
       </div>

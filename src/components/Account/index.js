@@ -14,13 +14,22 @@ class Account extends React.Component {
     signupError: "",
     signupLoading: false
   };
+
   onLoginPress = event => {
     event.preventDefault();
     const { email, password } = this.state;
     this.setState({ error: "", loading: true });
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, password)
+      .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+      .then(function() {
+        // Existing and future Auth states are now persisted in the current
+        // session only. Closing the window would clear any existing state even
+        // if a user forgets to sign out.
+        // ...
+        // New sign-in will be persisted with session persistence.
+        return firebase.auth().signInWithEmailAndPassword(email, password);
+      })
       .then(e => {
         this.onLoginSuccess(e);
       })
@@ -51,20 +60,12 @@ class Account extends React.Component {
     }
   };
   onLoginFail = e => {
-    if (e.code === "auth/user-not-found") {
-      this.setState({
-        error: "User does not exist",
-        loading: false
-      });
-    } else if (e.code === "auth/wrong-password") {
-      this.setState({
-        error: "Password is incorrect, please try again",
-        loading: false
-      });
-    }
+    this.setState({
+      error: e.message,
+      loading: false
+    });
   };
   onSignUpSuccess = e => {
-    console.log(e);
     this.setState({
       signupEmail: "",
       signupPassword: "",
@@ -74,11 +75,8 @@ class Account extends React.Component {
     if (e.operationType === "signIn") {
       history.push("/");
     }
-
-    // history.push("/");
   };
   onSignUpFail = e => {
-    console.log(e);
     this.setState({
       signupError: e.message,
       signupLoading: false

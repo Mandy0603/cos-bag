@@ -7,6 +7,7 @@
 index.html
 src/components/StoreLocation/index.js
 src/components/Skynav/index.js
+.gitignore
 
 # testing
 /coverage

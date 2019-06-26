@@ -13,10 +13,15 @@ class SingleItemPage extends React.Component {
   state = {
     isLoading: null,
     quantity: 1,
-    color: null
+    color: null,
+    hint: false
   };
+
   onSelectionChange = color => {
     this.setState({ color: color });
+    if (this.state.hint) {
+      this.setState({ hint: false });
+    }
   };
 
   componentDidMount() {
@@ -40,6 +45,11 @@ class SingleItemPage extends React.Component {
         </div>
       );
     });
+  };
+  renderHint = () => {
+    if (this.state.hint) {
+      return "Please select a color";
+    }
   };
 
   renderItem = () => {
@@ -70,7 +80,7 @@ class SingleItemPage extends React.Component {
             </div>
           </div>
 
-          <div className="item__description-price">${price}</div>
+          <div className="item__description-price">${price || "0.0"}</div>
           <div className="item__description-admin">
             <div className="item__description-admin-quantityAndColor">
               <QuantitySelector
@@ -83,6 +93,8 @@ class SingleItemPage extends React.Component {
                 colors={product_colors}
               />
             </div>
+
+            <div className="item__hint">{this.renderHint()}</div>
             <div className="purchaseAndWishlist">
               <button
                 onClick={() => this.onAddToBagClick()}
@@ -104,6 +116,7 @@ class SingleItemPage extends React.Component {
   };
   onAddToBagClick = () => {
     if (!this.state.color) {
+      this.setState({ hint: true });
       return;
     }
     const stateColor = this.state.color;
@@ -133,28 +146,6 @@ class SingleItemPage extends React.Component {
       });
     }
     this.props.addProduct(this.props.item);
-
-    // if (this.props.item.color) {
-    //   let flag = false;
-    //   this.props.item.color.map(color => {
-    //     if (color.name === stateColor) {
-    //       color.quantity += stateQuantity;
-    //       flag = true;
-    //     }
-    //   });
-    //   if (!flag) {
-    //     this.props.item.color.push({
-    //       name: stateColor,
-    //       quantity: stateQuantity
-    //     });
-    //   }
-    // } else {
-    //   this.props.item.color = Array({
-    //     name: stateColor,
-    //     quantity: stateQuantity
-    //   });
-    // }
-    // this.props.addProduct(this.props.item);
   };
   onAddToWishlistClick = () => {
     this.props.addToWishlist(this.props.item);

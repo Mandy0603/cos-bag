@@ -49,7 +49,7 @@ class ShoppingBag extends Component {
             <span className="quantity">Quantity:{total}</span>
             <span className="price">
               Unit Price: {"$"}
-              {p.price}
+              {p.price || "0.0"}
             </span>
           </div>
         </div>
