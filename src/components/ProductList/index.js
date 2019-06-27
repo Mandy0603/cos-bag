@@ -120,7 +120,6 @@ class ProductList extends React.Component {
     });
   };
   loadMorePages = page => {
-    console.log(this.props.productType);
     let nextPage = page + 1;
     let productTypeWithoutSpace;
     productTypeWithoutSpace = this.props.productType.replace(/\s+/g, "");
@@ -128,6 +127,7 @@ class ProductList extends React.Component {
       `/shop/${productTypeWithoutSpace}/${this.props.category}/${nextPage}`
     );
   };
+
   renderViewmoreButton = () => {
     let pagesShow;
     if (!this.props.pages) {
@@ -172,6 +172,19 @@ class ProductList extends React.Component {
             </div>
           )}
           <div className="shelf__list">{this.renderProducts(products)}</div>
+          {products.length === 0 && !isLoading && (
+            <div className="nothing">
+              <img
+                src={require("../../static/img/robot.png")}
+                alt="No items found pic"
+                className="nothing__pic"
+              />
+              <div className="nothing__text">
+                Oops! There is nothing to display
+              </div>
+            </div>
+          )}
+
           <div className="btn__operation">{this.renderViewmoreButton()}</div>
         </div>
       </React.Fragment>

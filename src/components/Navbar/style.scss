@@ -172,3 +172,19 @@
     display: flex;
   }
 }
+
+.nothing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  &__pic {
+    width: 30%;
+  }
+  &__text {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}

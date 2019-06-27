@@ -23,6 +23,7 @@ const brand = [
   "e.l.f.",
   "essie",
   "fenty",
+  "glossier",
   "green people",
   "l'oreal",
   "lotus cosmetics usa",

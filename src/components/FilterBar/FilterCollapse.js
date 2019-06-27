@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Checkbox from "./Checkbox";
 
 class FilterCollapse extends React.Component {
+  state = { checkBoxChanged: false };
   componentDidMount() {
     switch (this.props.filterType) {
       case "brands":
@@ -19,13 +20,18 @@ class FilterCollapse extends React.Component {
         break;
     }
   }
+  componentWillUnmount() {
+    if (this.state.checkBoxChanged) {
+      this.props.updateFilter(Array.from(this.selectedCheckboxes));
+    }
+  }
   toggleCheckbox = label => {
     if (this.selectedCheckboxes.has(label)) {
       this.selectedCheckboxes.delete(label);
     } else {
       this.selectedCheckboxes.add(label);
     }
-    this.props.updateFilter(Array.from(this.selectedCheckboxes));
+    this.setState({ checkBoxChanged: true });
   };
 
   createCheckBox = label => {

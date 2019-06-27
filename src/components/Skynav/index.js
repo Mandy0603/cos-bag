@@ -1,6 +1,7 @@
 import React from "react";
 import firebase from "firebase";
 import { connect } from "react-redux";
+
 import { userChange } from "../../services/User/actions";
 import history from "../../services/history";
 import FloatCart from "../FloatCart";
@@ -72,6 +73,7 @@ class Skynav extends React.Component {
     return (
       <div className="skynav">
         <div className="skynav__left">
+          {/* Only shown menu when max-width is 1024px */}
           <div className="skynav__left menu">
             <i
               onClick={() => {
@@ -82,6 +84,8 @@ class Skynav extends React.Component {
               className="list ul icon"
             />
           </div>
+
+          {/* Homepage icon */}
           <div className="house">
             <i
               onClick={() => {
@@ -90,6 +94,8 @@ class Skynav extends React.Component {
               className="home icon"
             />
           </div>
+
+          {/* to Google Maps component */}
           <div
             onClick={() => {
               history.push("/storelocation");
@@ -100,6 +106,7 @@ class Skynav extends React.Component {
           </div>
         </div>
 
+        {/* Website name */}
         <div
           onClick={() => {
             history.push("/");
@@ -110,10 +117,12 @@ class Skynav extends React.Component {
         </div>
 
         <div className="skynav__right">
+          {/* User Account */}
           <div className="skynav__right account">
             <i className="user outline icon" />
             {this.renderAccount()}
           </div>
+          {/* Wishlist */}
           <div className="skynav__right wishlist ">
             <div
               onClick={() => {
@@ -122,12 +131,14 @@ class Skynav extends React.Component {
               className="wishlist__display"
             >
               <i className="heart outline icon" />
-              <span>{this.displayWishlistItemNumber()}</span>{" "}
+              <span>{this.displayWishlistItemNumber()}</span>
             </div>
+            {/* Wishlist collapse */}
             <div className="wishlist__hidden">
               <WishList />
             </div>
           </div>
+          {/* Shopping Bag */}
           <div className="shopping-bag ">
             <div
               onClick={() => {
@@ -138,6 +149,7 @@ class Skynav extends React.Component {
               <i className="shopping bag icon" />
               <span>{this.displayCartItemNumber()}</span>{" "}
             </div>
+            {/* Shopping bag collapse */}
             <div className="shopping-bag__hidden">
               <FloatCart />
             </div>

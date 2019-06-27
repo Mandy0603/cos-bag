@@ -1,13 +1,20 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
+
 import history from "../../services/history";
 import Banner from "../Banner";
 import Skynav from "../Skynav";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+
 import Home from "../Home";
 import Account from "../Account";
 import UserInfo from "../UserInfo";
+import ShoppingBag from "../ShoppingBag";
+import WishListPage from "../WishListPage";
+import StoreLocation from "../StoreLocation";
+import SingleItemPage from "../SingleItemPage";
+
 import Blush from "../productTypes/Blush";
 import Bronzer from "../productTypes/Bronzer";
 import Eyebrow from "../productTypes/Eyebrow";
@@ -18,10 +25,7 @@ import LipLiner from "../productTypes/LipLiner";
 import Lipstick from "../productTypes/Lipstick";
 import Mascara from "../productTypes/Mascara";
 import NailPolish from "../productTypes/NailPolish";
-import ShoppingBag from "../ShoppingBag";
-import WishListPage from "../WishListPage";
-import StoreLocation from "../StoreLocation";
-import SingleItemPage from "../SingleItemPage";
+
 import "../style.scss";
 
 class App extends React.Component {

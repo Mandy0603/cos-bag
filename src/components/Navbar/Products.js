@@ -1,8 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+
+import { updateMenuClassName } from "../../services/Menu/actions";
 
 class Products extends React.Component {
   state = { isArrowClicked: false };
+  onCloseButtonClick = () => {
+    this.props.updateMenuClassName("navbar__main navbar__main-closed");
+  };
+
   renderSub = (subcategory, productWithoutSpace) => {
     return subcategory.map(sub => {
       const subWithoutSpace = sub.replace(/\s+/g, "");
@@ -10,7 +17,7 @@ class Products extends React.Component {
         <li className="navbar__hidden-item" key={sub.toString()}>
           <Link
             onClick={() => {
-              this.props.onSomethingSelected();
+              this.props.updateMenuClassName();
             }}
             to={`/shop/${productWithoutSpace}/${subWithoutSpace}`}
             className="navbar-headers"
@@ -45,7 +52,7 @@ class Products extends React.Component {
         <div className="navbar__itemAndArrow">
           <Link
             onClick={() => {
-              this.props.onSomethingSelected();
+              this.props.updateMenuClassName();
             }}
             to={`/shop/${productWithoutSpace}/all`}
             className="navbar__link"
@@ -68,4 +75,7 @@ class Products extends React.Component {
     );
   }
 }
-export default Products;
+export default connect(
+  null,
+  { updateMenuClassName }
+)(Products);
