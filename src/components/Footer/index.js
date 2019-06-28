@@ -18,7 +18,6 @@ const Footer = () => {
         <div className="footer-nav__about">
           <h3>About CosBag</h3>
           <ul>
-            <li>About CosBag</li>
             <li>Careers</li>
 
             <li>Affiliates</li>
@@ -56,7 +55,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-copyright">
-          <div>Copyright &copy; 2019</div>
+          <div>Copyright &copy; Yandi Ma 2019. </div>
         </div>
       </div>
     </div>

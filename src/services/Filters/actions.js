@@ -18,3 +18,9 @@ export const updateCategoryFilters = filters => {
     payload: filters
   };
 };
+
+export const resetFilters = () => {
+  return {
+    type: "RESET_FILTERS"
+  };
+};

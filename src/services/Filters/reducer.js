@@ -21,6 +21,11 @@ export default function(state = initialState, action) {
         ...state,
         category: action.payload
       };
+    case "RESET_FILTERS":
+      return {
+        ...state,
+        ...initialState
+      };
 
     default:
       return state;

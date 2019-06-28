@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import CloseButton from "./CloseButton";
+import { resetFilters } from "../../services/Filters/actions";
 import "./style.scss";
 
 class FilterResult extends React.Component {
@@ -22,46 +24,61 @@ class FilterResult extends React.Component {
   render() {
     return (
       <div className="filter-result">
-        <div className="filter-result__content">
-          {this.props.brands.map(brand => {
-            return (
-              <div key={brand.toString()} className="filter-result__category">
-                <div className="filter-result__brand">{brand}</div>
-                <CloseButton
-                  type="brands"
-                  item={brand}
-                  clickButton={this.clickButton}
-                />
-              </div>
-            );
-          })}
-          {this.props.tags.map(tag => {
-            return (
-              <div key={tag.toString()} className="filter-result__category">
-                <div className="filter-result__tag">{tag}</div>
-                <CloseButton
-                  type="tags"
-                  item={tag}
-                  clickButton={this.clickButton}
-                />
-              </div>
-            );
-          })}
-          {this.props.category.map(category => {
-            return (
-              <div
-                key={category.toString()}
-                className="filter-result__category"
-              >
-                <div className="filter-result__subcategory">{category}</div>
-                <CloseButton
-                  type="category"
-                  item={category}
-                  clickButton={this.clickButton}
-                />
-              </div>
-            );
-          })}
+        <div className="filter-result__contentContainer">
+          <div className="filter-result__content">
+            {this.props.brands.map(brand => {
+              return (
+                <div key={brand.toString()} className="filter-result__category">
+                  <div className="filter-result__brand">{brand}</div>
+                  <CloseButton
+                    type="brands"
+                    item={brand}
+                    clickButton={this.clickButton}
+                  />
+                </div>
+              );
+            })}
+            {this.props.tags.map(tag => {
+              return (
+                <div key={tag.toString()} className="filter-result__category">
+                  <div className="filter-result__tag">{tag}</div>
+                  <CloseButton
+                    type="tags"
+                    item={tag}
+                    clickButton={this.clickButton}
+                  />
+                </div>
+              );
+            })}
+            {this.props.category.map(category => {
+              return (
+                <div
+                  key={category.toString()}
+                  className="filter-result__category"
+                >
+                  <div className="filter-result__subcategory">{category}</div>
+                  <CloseButton
+                    type="category"
+                    item={category}
+                    clickButton={this.clickButton}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          {!!(
+            this.props.brands.length !== 0 ||
+            this.props.tags.length !== 0 ||
+            this.props.category.length !== 0
+          ) && (
+            <div
+              className="filter-result__resetButton"
+              onClick={this.props.resetFilters}
+            >
+              Reset Filters
+              <i class="trash alternate outline icon" />
+            </div>
+          )}
         </div>
         <div className="filter-result__number">
           Showing {this.calculateItems()} of {this.props.products.length} items
@@ -80,4 +97,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps)(FilterResult);
+export default connect(
+  mapStateToProps,
+  { resetFilters }
+)(FilterResult);

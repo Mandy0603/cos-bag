@@ -1,7 +1,6 @@
 .filterbar {
   padding: 0rem 2rem;
   font-size: 1.5rem;
-  color: rgb(75, 75, 75);
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -61,8 +60,8 @@
 }
 .filters {
   &__container {
-    height: 35rem;
-    background-color: #ffffffde;
+    height: 38rem;
+    background-color: #1d1d1d;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -71,7 +70,6 @@
     top: 3rem;
     left: 0;
     padding: 2rem 8rem;
-    margin: 0 2rem;
     font-size: 1.3rem;
     z-index: 10;
     @media screen and (max-width: 1024px) {
@@ -130,7 +128,7 @@
 
         line-height: 35px;
         text-align: center;
-        color: #1b1a20;
+        color: rgb(226, 226, 226);
       }
     }
   }
@@ -139,9 +137,7 @@
 .sort {
   &__container {
     font-size: 1.5rem;
-    color: #806d6d;
     @media screen and (max-width: 667px) {
-      color: #4b4b4b;
       margin-bottom: 1rem;
     }
     @media screen and (max-width: 414px) {
@@ -152,7 +148,6 @@
     border: none;
     margin-left: 1rem;
     font-size: 1.5rem;
-    color: #806d6d;
     padding: 0 1.5rem;
     &:focus {
       outline: none;

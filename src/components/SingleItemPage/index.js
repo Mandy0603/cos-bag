@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { connect } from "react-redux";
 import { fetchItem } from "../../services/Item/actions";
 import { addProduct } from "../../services/Cart/actions";
@@ -10,6 +11,11 @@ import Modal from "../Modal";
 import "./style.scss";
 
 class SingleItemPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.itemDescription = React.createRef();
+  }
+
   state = {
     isLoading: null,
     quantity: 1,
@@ -26,17 +32,29 @@ class SingleItemPage extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+
     this.setState({ isLoading: true });
     const { id } = this.props.match.params;
     this.props.fetchItem(id, () => this.setState({ isLoading: false }));
   }
 
+  colorBlockClassname = color => {
+    if (color === this.state.color) {
+      return "descriptions__colors-display descriptions__colors-selected";
+    } else {
+      return "descriptions__colors-display";
+    }
+  };
+  onColorBlockClicked = color => {
+    this.setState({ color: color.colour_name, hint: false });
+  };
   renderColors = colors => {
     return colors.map(color => {
       return (
         <div key={color.colour_name} className="descriptions__colors">
           <div
-            className="descriptions__colors-display"
+            onClick={() => this.onColorBlockClicked(color)}
+            className={this.colorBlockClassname(color.colour_name)}
             style={{ backgroundColor: `${color.hex_value}` }}
           />
           <div className="descriptions__colors-hidden">{`${
@@ -61,6 +79,7 @@ class SingleItemPage extends React.Component {
       price,
       product_colors
     } = this.props.item;
+
     return (
       <>
         <div className="item item__image">
@@ -70,7 +89,11 @@ class SingleItemPage extends React.Component {
           <div className="item__description-brand">{brand}</div>
           <div className="item__description-name">{name}</div>
 
-          <div className="item__description-description">{description}</div>
+          <div className="item__description-description">
+            {description}
+
+            {/* {this.renderCollapse()} */}
+          </div>
           <div className="item__description-colors">
             <div className="item__description-colorsTitle">
               Available Colors:
@@ -89,11 +112,11 @@ class SingleItemPage extends React.Component {
                 }}
               />
               <ColorSelector
+                colorSelected={this.state.color}
                 onSelectionChange={this.onSelectionChange}
                 colors={product_colors}
               />
             </div>
-
             <div className="item__hint">{this.renderHint()}</div>
             <div className="purchaseAndWishlist">
               <button
@@ -119,6 +142,7 @@ class SingleItemPage extends React.Component {
       this.setState({ hint: true });
       return;
     }
+    this.setState({ successHint: "Item added successfully!" });
     const stateColor = this.state.color;
     const stateQuantity = this.state.quantity;
 

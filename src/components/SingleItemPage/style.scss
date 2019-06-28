@@ -91,9 +91,13 @@
         background-color: #f58e88;
         color: #fff;
         cursor: pointer;
-
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        transform: translateY(-4px);
         &:focus {
           outline: 0;
+        }
+        &:active {
+          transform: translateY(-1px);
         }
         @media screen and (max-width: 1100px) {
           padding: 1rem 2rem;
@@ -122,6 +126,8 @@
     }
     &-description {
       font-size: 1.4rem;
+      max-height: 11rem;
+      overflow-y: auto;
       @media screen and (max-width: 667px) {
         font-size: 1.3rem;
       }
@@ -172,6 +178,12 @@
       width: 2.5rem;
     }
   }
+  &-selected {
+    margin-right: 7px;
+    margin-left: 4px;
+    outline: 2px solid red;
+    outline-offset: 2px;
+  }
   &-hidden {
     opacity: 0;
     visibility: hidden;
@@ -186,3 +198,25 @@
     font-size: 1.2rem;
   }
 }
+// .purchaseDone {
+//   font-size: 2rem;
+//   color: #f58e88;
+//   opacity: 0;
+
+//   animation-name: success;
+//   animation-duration: 3s;
+// }
+// @keyframes success {
+//   0% {
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+//   50% {
+//     opacity: 1;
+//     visibility: visible;
+//   }
+//   100% {
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+// }

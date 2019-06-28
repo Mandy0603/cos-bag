@@ -16,6 +16,7 @@ class ColorSelector extends React.Component {
         <div className="color-selector__title">Select Color:</div>
         <div className="color-selector__content">
           <select
+            value={this.props.colorSelected}
             onChange={event => this.props.onSelectionChange(event.target.value)}
             className="color-selector__options"
           >
